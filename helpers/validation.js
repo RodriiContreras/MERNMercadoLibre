@@ -1,11 +1,20 @@
 const User = require("../models/user")
 
-const emailExists = async (email = '')=>{
+const emailExists = async (email = '')=>{ // validation where we find input email in our mongo DB
 
     const userEmailExists = await User.findOne({email})
 
     if(userEmailExists){
        throw new Error('El Email ya existe')
+    }
+}
+
+const loginEmailNoExists = async (email = '')=>{ //validation for email
+
+    const userEmailExists = await User.findOne({email})
+
+    if(!userEmailExists){
+       throw new Error('El Email no existe')
     }
 }
 
@@ -30,5 +39,6 @@ const cellphoneExists = async (cellphone = '') =>{
 module.exports={
     emailExists,
     dniExists,
-    cellphoneExists
+    cellphoneExists,
+    loginEmailNoExists
 }

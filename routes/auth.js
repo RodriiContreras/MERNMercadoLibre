@@ -1,7 +1,7 @@
 const {Router} = require('express')
 const {check} = require('express-validator');
 const { userRegister,userLogin } = require('../controllers/auth');
-const { emailExists,dniExists,cellphoneExists } = require('../helpers/validation');
+const { emailExists,dniExists,cellphoneExists,loginEmailNoExists } = require('../helpers/validation');
 const { validation } = require('../middlewares/camposValidados');
 
 
@@ -26,7 +26,10 @@ router.post('/Register', [
 
 //esta ruta recibe email - name - password - cellphone - dni -lastname 
 router.post('/Login',[
-
+    check('email','El email no es valido').isEmail(),
+    check('email','El email no existe').custom(loginEmailNoExists),
+    check('password','la contraseña es necesaria').not().isEmpty(),
+    validation
 ],userLogin)
 
 
