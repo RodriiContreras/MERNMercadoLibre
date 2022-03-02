@@ -13,7 +13,8 @@ class Server{
 
         //PATHS DE MI APP MERCADOLIBRE
         this.paths={
-          auth:'/auth'
+          auth:'/auth',
+          product:'/product'
         }
 
 
@@ -45,7 +46,8 @@ class Server{
       }
     
       routes(){ 
-          this.app.use(this.paths.auth, require('../routes/auth.js'))
+          this.app.use(this.paths.auth,require('../routes/auth'));
+          this.app.use(this.paths.product,require('../routes/product'));
       }
     
       listen(){

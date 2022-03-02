@@ -13,15 +13,23 @@ const ProductSchema = Schema({
        type:Number,
        required:true,
    },
+   img:{
+       type:String
+   },
+   user:{
+       type:Schema.Types.ObjectId,
+       required:true,
+       ref:'User'
+   },
    description:{
        type:String,
        required:true
    },
    category:{
        type:String,
-       required:true
+       required:true,
+       enum:['cellphone','car','indumentary']
    }
-
 })
 
 module.exports = model('Product',ProductSchema)
