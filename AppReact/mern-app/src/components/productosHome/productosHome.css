@@ -1,0 +1,13 @@
+#h2_productosHome{
+    position: relative;
+    margin-top: 60px;
+    width:300px;
+    font-family: 'Source Sans Pro', sans-serif;
+    left: 15%;
+}
+#CardProducts_ContainerFlex{
+  position: relative;
+  display: flex;
+  left: 15%;
+  width:75%;
+}

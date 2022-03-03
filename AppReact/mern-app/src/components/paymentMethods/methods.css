@@ -1,0 +1,64 @@
+#methodsPayment_container{
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    position: relative;
+    margin-top: 30px;
+    border-radius:1%;
+
+    left: 13%;
+    width: 1315px;
+    height: 85px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.methodsPayment_parraph{
+    font-size: 18px;
+    font-weight: 500;
+}
+.methodsPayment_link{
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#methodsPayment_group1{
+    width: 250PX;
+}
+#methodsPayment_card{
+  color: #1f6af5;
+  opacity: 90%;
+  font-size: 30px;
+}
+
+#methodsPayment_CardContainer{
+    position: absolute;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 50%;
+    border:1px solid rgb(221, 219, 219);
+}
+#methodsPayment_CardContainerPlus{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 50%;
+    border:1px solid rgb(221, 219, 219);
+}
+
+#methodsPayment_CardContainerMasterPlus{
+border-left: 1px solid rgb(233, 232, 232);
+position: relative;
+margin-right: 70px;
+}
+  
+.methodsPayment_parraph{
+    font-weight:600;
+    padding-left: 60px;
+    padding-top: 15px;
+    margin-bottom: 0;
+}
+.methodsPayment_link{
+    padding-left: 60px;
+    font-size: 14px;
+}

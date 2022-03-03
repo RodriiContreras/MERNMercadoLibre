@@ -1,0 +1,120 @@
+#navbar_content{
+    display: flex;
+    background-color:#FFF159;
+    width: 100%;
+    height: 100px;
+}
+
+#MELI_logo{
+    width: 140px;
+    position: relative;
+    left: 350px;
+}
+#searchbox_container{
+    background-color: white;
+    border-radius: 2%;
+    width: 620px;
+    height: 38px;
+    margin-top: 15px;
+    position: relative;
+    left: 20%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+#searchbox_button{
+    color: gray;
+    margin-left: 12px;
+    z-index: +5;
+}
+#searchbox_navbar{
+    border-top: white;
+    border-left: white;
+    border-bottom: white;
+    border-right: 1px solid rgb(206, 203, 203);
+    width: 578px;
+    height: 36px;
+}
+::placeholder{
+    opacity: 80%;
+    padding-left: 10px;
+     font-size: 15px;
+     font-family: 'Source Sans Pro', sans-serif;
+}
+
+#landing_listContainer{
+    margin-top: 70px;
+    position: absolute;
+    left: 25%;
+    display: flex;
+    width: 500px;
+    border-style: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+.landing_subItem{
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+.landing_subItemLink{
+    text-decoration: none;
+    color:black;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#navbar_listAuth-Cart{
+    margin-top: 70px;
+    position: absolute;
+    left: 60%;
+    display: flex;
+    width: 500px;
+    border-style: none;
+    text-decoration: none;
+    list-style: none;
+    color:black
+}
+#navbar_cart{
+    color: black;
+    font-size: 16px;
+}
+.navbar_subItemLink{
+    text-decoration: none;  
+    color:black;
+    font-family: 'Source Sans Pro', sans-serif; 
+}
+.landing_subItemCart{
+    padding-left: 15px;
+    font-size: 14px;
+  font-weight: 600;
+}
+#navbar_enviosContainerButton{
+    display: flex;
+    text-decoration: none;
+}
+#envios_parrafo{
+    font-size: 12px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+}
+#envios_parrafoSpan{
+    font-size: 13px;
+    font-weight: bolder;
+}
+#navbar_envios{
+    margin-top:59px;
+    position: absolute;
+    left: 20%;
+    font-size: 15px;
+    display: flex;
+    width: 100px;
+    border-style: none;
+    text-decoration: none;
+    list-style: none;
+    color:black
+}
+#navbar_enviosFlecha{
+    margin-top:10px;
+    margin-right: 5px;
+    color: black;
+}
