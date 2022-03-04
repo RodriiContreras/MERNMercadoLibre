@@ -6,13 +6,15 @@ const { generateToken } = require('../helpers/jwt');
 
 
 const userRegister =  async(req,res=response)=>{
-  const {name,lastname, email,password,dni,cellphone} = req.body
- 
+  const {name,email,password,dni,cellphone} = req.body
+  console.log(req.body)
+
+
   const salt = bcrypt.genSaltSync();
-  const usuario = new User({name,lastname,email,password,dni,cellphone})
+  const usuario = new User({name,email,password,dni,cellphone})
   usuario.password= bcrypt.hashSync(password, salt);
 
- await usuario.save()
+  await usuario.save()
 
  res.status(200).json({
      msg:'Ha sido registrado Correctamente'
@@ -21,6 +23,8 @@ const userRegister =  async(req,res=response)=>{
 
 const userLogin =  async ( req , res = response )=>{
  const {email,password} = req.body
+
+ console.log(req.body)
 
  const userExists = await User.findOne({email})
  if(!userExists){

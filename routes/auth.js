@@ -15,7 +15,6 @@ router.post('/Register', [
     check('email','El email no es valido').isEmail(),
     check('email','El email ya existe').custom(emailExists),
     check('dni','El dni es necesario').not().isEmpty(),
-    check('name','El Nombre es necesario').not().isEmpty(),
     check('password','La contraseña es necesaria').not().isEmpty(),
     check('dni','El dni es un conjunto de numeros').isNumeric(),
     check('cellphone','El numero ya existe').custom(cellphoneExists),
