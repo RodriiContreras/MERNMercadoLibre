@@ -1,7 +1,10 @@
 import React from 'react'
 import './register.css'
-import { Formik } from 'formik';
 import imagen from '../../../globalImages/mercado-libre-logo.png'
+import {Link } from  'react-router-dom'
+import Background from '../../backgroundComponentsLogin/Background'
+import FormFormik from './registerFormik/FormFormik'
+
 
 
 
@@ -10,17 +13,15 @@ const Register = () =>  {
     <>
      <div>
          <div id='Register_FormContainer'>
-         <img id='Register_ImageLogoContainer' src={imagen} />
-         <h2 id='Register_H2'>Register your Account!</h2>
-           <div>
-               
+        <Link to='/'><img id='Register_ImageLogoContainer' src={imagen} /></Link>
+         <h1 id='Register_H1'>Register your Account!</h1>
+           <div id='Register_ButtonsToRegisterContainer'>
+             <h2 id='Register_h2Container'>Your Data</h2>
+             <p id='Register_pContainer'>Validá tus datos para que nadie pueda ingresar o crear una cuenta a tu nombre.</p>
+             <FormFormik/>
            </div>
          </div>
-         <img id='Register_ImageLogo' src={imagen} />
-         <div id='Register_Background'>
-        </div>
-        <div id='Register_BackgroundOpacity'>
-        </div>
+         <Background/>
      </div>
     </>
   )

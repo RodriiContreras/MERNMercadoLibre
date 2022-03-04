@@ -1,0 +1,79 @@
+#Register_H1{
+    position: absolute;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-left: 2%;
+    font-size: 34px;
+    margin-top: 7%;
+}
+
+#Register_FormikContainer{
+    margin-left: 45px;
+}
+#email{
+    border-radius: 2px;
+    border: 1px solid rgb(138, 137, 137);
+    font-family: 'Source Sans Pro', sans-serif;
+    box-shadow: rgba(140, 138, 138, 0.1) 0px 4px 12px;
+    margin-top: 5px;
+    height: 30px;
+}
+
+#cellphone{
+    border-radius: 2px;
+    border: 1px solid rgb(138, 137, 137);
+    box-shadow: rgba(140, 138, 138, 0.1) 0px 4px 12px;
+    margin-top: 5px;
+    height: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#password{
+    border-radius: 2px;
+    border: 1px solid rgb(138, 137, 137);
+    box-shadow: rgba(140, 138, 138, 0.1) 0px 4px 12px;
+    margin-top: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    height: 30px;
+}
+.Form_LoginvalidateLabel{   
+    margin-top: 20px;
+}
+
+#Form_LoginLinkRegister{
+    position: absolute;
+    margin-top: 50px;
+    left:15%;
+    width: 250px;
+}
+
+
+
+#Register_FormikSubmitButton{
+    text-decoration: none;
+    width: 180px;
+    border-radius: 4%;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    border-style: none;
+    font-weight: bolder;
+    font-size: 16px;
+    background-color: #3483FA;
+    box-shadow: rgba(140, 138, 138, 0.1) 0px 4px 12px;
+    margin-top: 15px;
+}
+#Register_FormikSubmitButton:hover{
+    color: white;
+    background-color: #1753ae;
+}
+
+#Login_ButtonsToRegisterContainer{
+    position: absolute; 
+    border-radius: 2%;
+    box-shadow: rgba(140, 138, 138, 0.1) 0px 4px 12px;
+    border: 1px solid rgb(209, 209, 209);
+    margin-left: 40px;
+    margin-top: 200px;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+}

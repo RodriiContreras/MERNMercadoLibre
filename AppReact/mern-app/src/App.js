@@ -1,6 +1,7 @@
 
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import './App.css';
+import Login from "./components/auth/loginComponent/Login";
 import Register from "./components/auth/loginComponents/registerComponents/Register";
 import Navbar from "./components/navbar/Navbar";
 import Home from './mainComponents/Home';
@@ -22,6 +23,7 @@ function App() {
 
 
    <Route exact path='/auth/Register'  element={<Register/>}/>
+   <Route exact path='/auth/Login'  element={<Login/>}/>
 
       </Routes>
     </div>
