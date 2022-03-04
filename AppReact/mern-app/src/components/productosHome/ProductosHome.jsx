@@ -5,6 +5,7 @@ import CardProducts from './CardProducts/CardProducts'
 
 const ProductosHome = () => {
     const [productos, setproductos] = useState([])
+    const [boolean, setBoolean] = useState(false)
     useEffect(() => {
         fetch('/product/buy-products').then(res =>{
             if(res.ok){
@@ -19,11 +20,9 @@ const ProductosHome = () => {
    <>
    <h2 id='h2_productosHome'>Some of our Products</h2>
    <div id='CardProducts_ContainerFlex'>
-   <CardProducts/>
-   <CardProducts/>
-   <CardProducts/>
-   <CardProducts/>
-   <CardProducts/>
+    {productos.map(items => (
+        <CardProducts key={items.id} price={items.price} stock={items.stock} name={items.name}/>
+    ))}
    </div>
 
    </>

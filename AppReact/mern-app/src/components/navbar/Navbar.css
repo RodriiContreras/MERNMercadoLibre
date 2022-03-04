@@ -55,13 +55,57 @@
     padding-left: 20px;
     font-size: 15px;
     font-weight: 500;
-
 }
 .landing_subItemLink{
     text-decoration: none;
-    color:black;
+    color:rgb(34, 33, 33);
     font-family: 'Source Sans Pro', sans-serif;
 }
+#navbar_content #landing_desple{
+display:none;
+}
+
+
+#navbar_content #landing_listContainer .landing_subItem #landing_desple{
+text-decoration: none;
+list-style: none;
+}
+#navbar_content #landing_listContainer .landing_subItem #landing_desple a{
+ text-decoration: none;
+ list-style: none;
+ color: rgb(255, 255, 255);
+ font-size: 15px;
+margin-bottom: 15px;
+}
+
+#navbar_content #landing_listContainer .landing_subItem #landing_desple a:hover{
+    text-decoration: none;
+    background-color: #3483FA;
+    font-size: 15px;
+   margin-bottom: 15px;
+   width: 110px;
+   z-index: +300;
+   }
+
+.landing_despleDiv{
+    margin-top:8px;
+}
+
+#navbar_content #landing_listContainer .landing_subItem:hover #landing_desple{
+    position: absolute;
+    border-radius: 3%;
+    background-color: #333333;
+    width: 150px;
+    height: 200px;
+    z-index: +200;
+    display: flex;
+}
+
+.landing_subItemLink:hover{
+    font-weight: bold;
+    color:black;
+}
+
 
 #navbar_listAuth-Cart{
     margin-top: 70px;
@@ -75,14 +119,28 @@
     color:black
 }
 #navbar_cart{
-    color: black;
+    color: rgb(78, 78, 78);
     font-size: 16px;
+}
+#navbar_cart:hover{
+    color: rgb(34, 34, 34);
+    font-size: 16px;
+}
+#SubItem_ArrowDownIcon{
+    font-size: 10px;
+    color: rgb(186, 186, 186);
 }
 .navbar_subItemLink{
     text-decoration: none;  
-    color:black;
-    font-family: 'Source Sans Pro', sans-serif; 
+    color:rgb(67, 66, 66);
+    font-family: 'Source Sans Pro', sans-serif;
 }
+.navbar_subItemLink:hover{
+     color:black;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
 .landing_subItemCart{
     padding-left: 15px;
     font-size: 14px;

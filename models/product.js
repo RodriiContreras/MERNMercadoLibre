@@ -28,7 +28,7 @@ const ProductSchema = Schema({
    category:{
        type:String,
        required:true,
-       enum:['cellphone','car','indumentary']
+       enum:['cellphone','car','indumentary','supermarket']
    }
 })
 
