@@ -1,0 +1,10 @@
+#SellProducts_ContentFlex{
+    display: flex;
+    margin-left: 30%;
+    margin-top: 3%;
+    width: 38%;
+    height: 70%;
+}
+#Products_FormikContainer{
+  width: 200px;
+}

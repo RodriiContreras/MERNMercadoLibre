@@ -17,7 +17,7 @@ const userRegister =  async(req,res=response)=>{
   await usuario.save()
 
  res.status(200).json({
-     msg:'Ha sido registrado Correctamente'
+     msg:'Success'
  })
 }
 
@@ -38,11 +38,14 @@ const userLogin =  async ( req , res = response )=>{
      msg:'Email y/o password incorrectos'
    })
  }
-
+ const {name} = userExists;
  const userToken = await generateToken(email,password)
 
+
 res.json({
-  msg:userToken
+  msg:'Success',
+  userName : name,
+  token:userToken
 })
 }
 

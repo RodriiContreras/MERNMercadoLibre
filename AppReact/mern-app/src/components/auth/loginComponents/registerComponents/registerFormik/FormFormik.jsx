@@ -5,8 +5,8 @@ import {useEffect, useState } from 'react'
 import * as Yup from 'yup'
 const  FormFormik = () => {
    const [data, setData] = useState([])
+   const [booleanPathToLogin, setBooleanPathToLogin] = useState(false)
 
-console.log(data)
    useEffect(() => {
     fetch("http://localhost:8080/auth/Register" ,{
       method:'POST',
@@ -16,7 +16,12 @@ console.log(data)
       },
       body: data})
       .then(resp => resp.json())
-      .then(resp => console.log(resp))
+      .then(resp =>{
+        console.log(resp)
+        if(resp.msg === 'Success'){
+          setBooleanPathToLogin(true)
+        }
+      })
 
       .catch(err => console.log(err))
  }, [data])
@@ -85,8 +90,10 @@ console.log(data)
            type="password"
          />
 
-         <button id='Register_FormikSubmitButton' type="submit">Submit</button>
-         <Link id='Register_LinkToLogin' to='/auth/login'>You already Have an account?</Link>
+
+  {booleanPathToLogin ?  <Link to='/auth/login'><button id='Register_FormikSubmitButton'>Go Login</button></Link>   : <button id='Register_FormikSubmitButton' type="submit">Submit</button>  }
+   
+         <Link id='Register_LinkToLogin' to='/auth/login'>You already have an account?</Link>
        </Form>
      </Formik>
      </div>

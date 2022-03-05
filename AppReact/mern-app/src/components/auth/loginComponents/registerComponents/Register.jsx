@@ -17,7 +17,7 @@ const Register = () =>  {
          <h1 id='Register_H1'>Register your Account!</h1>
            <div id='Register_ButtonsToRegisterContainer'>
              <h2 id='Register_h2Container'>Your Data</h2>
-             <p id='Register_pContainer'>Validá tus datos para que nadie pueda ingresar o crear una cuenta a tu nombre.</p>
+             <p id='Register_pContainer'>Validate your data and any can login or create an account with your data</p>
              <FormFormik/>
            </div>
          </div>

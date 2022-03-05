@@ -1,0 +1,45 @@
+#SubNavbar_BackgroundContent{
+    background-color: #FFEA78;
+    height: 300px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#SellProducts_ContentFlex{
+    display: flex;
+    justify-content: space-around;
+}
+#SellProducts_SubitemCard{
+    text-decoration: none;
+    color: #444442;
+    height: 150px;
+    text-align: center;
+    margin-top: 25px;
+    border-radius: 3%;
+    width: 150px;
+    background-color:white;
+}
+#SellProducts_SubitemCard:hover{
+    transition: .3s;
+    color: #096df0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.SellProducts_SubitemIconCard{
+    font-size: 35px;
+    margin-bottom: 0;
+}
+.SellProducts_SubitemPCard{
+    margin-top: 10px;
+}
+.SellProducts_SubItemCardContainer{
+    margin-top: 40px;
+}
+#SubNavbar_h1{
+    width: 380px;
+    position: relative;
+    padding-top: 80px;
+    left: 32%;
+    font-weight: bolder;
+    font-size: 30px;
+}
+

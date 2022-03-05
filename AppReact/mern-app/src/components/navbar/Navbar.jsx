@@ -4,8 +4,14 @@ import meliLatam from './images/meliLatam.png'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass,faCartArrowDown,faLocationPin,faArrowDown} from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../Context/AuthContext'
 const Navbar =() => {
+
+  const {dataAuth , setDataAuth} = useContext(AuthContext)
+  
     
+  console.log(dataAuth)
   return(
     <>
     <div id='navbar_content'>
@@ -42,19 +48,19 @@ const Navbar =() => {
         </ul>
 
         <div id='navbar_envios'>
-         <a href='' id='navbar_enviosContainerButton'>
+         <Link to='/' id='navbar_enviosContainerButton'>
            <FontAwesomeIcon id='navbar_enviosFlecha' icon={faLocationPin}/>
            <p id='envios_parrafo'>Send to <span id='envios_parrafoSpan'>Capital Federal</span></p>
-         </a>
+         </Link>
         </div>
 
         <ul id='navbar_listAuth-Cart'>
-          <li class='landing_subItemCart'><Link className='navbar_subItemLink' to='/auth/Register'>Create your Account!</Link></li>
-          <li class='landing_subItemCart'><Link className='navbar_subItemLink' to='/auth/Login'>Login</Link></li>
+          <li class='landing_subItemCart'>{dataAuth.length > 1 ? <Link className='navbar_subItemLink' to='/'> Hi! {dataAuth}</Link> : <Link className='navbar_subItemLink' to='/auth/Register'>Create your Account!</Link> }</li>
+          <li class='landing_subItemCart'> {dataAuth.length > 1 ?<></>:<Link className='navbar_subItemLink' to='/auth/Login'>Login</Link>}</li>
           <li class='landing_subItemCart'><Link className='navbar_subItemLink' to='/cart'>My owns</Link></li>
           
            <li class='landing_subItemCart'>
-             <Link className='navbar_subItemLink' to=''>
+             <Link className='navbar_subItemLink' to='/cart'>
               <FontAwesomeIcon id='navbar_cart' icon={faCartArrowDown}/>
             </Link>
            </li>

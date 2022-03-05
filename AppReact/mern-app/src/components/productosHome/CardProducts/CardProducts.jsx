@@ -6,17 +6,6 @@ import ImagenPrueba from '../imagenesprueba/fotoprueba.png'
 
 const  CardProducts = ({price, name, stock}) => {
   const [boolean, setBoolean] = useState(true)
-  
-
-
-  // if(!boolean){
-  //   const cardProduct  = document.getElementById('CardProduct_Container')
-  //   cardProduct.addEventListener('mouseover',()=>{
-  //     let hiddenPrice = document.getElementById('CardProducts_FinalPrice')
-  //     hiddenPrice.style.visibility=('visible')
-  //   })
-  // }
-
 
   const revealItems = () =>{
  document.getElementById('CardProduct_Name').style.display='block'

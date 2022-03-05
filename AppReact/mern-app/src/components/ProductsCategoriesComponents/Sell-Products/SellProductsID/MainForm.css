@@ -1,0 +1,52 @@
+#Products_FormikContainer{
+    background-color: rgb(253, 253, 253);
+    border-radius: 1%;
+    position: absolute;
+    width: 400px;
+    margin-top: 110px;
+    height: 390px;
+    left: 37%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.Form_MainvalidateLabel{
+    margin-top: 2%;
+    margin-left: 18%;
+    width: 60%;
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#Form_email{
+    margin-left: 18%;
+    width: 60%;
+}
+#Form_description{
+    margin-left: 18%;
+    width: 60%;
+}
+#Form_stock{
+    margin-left: 18%;
+    width: 60%;
+}
+#Form_price{
+    margin-left: 18%;
+    width: 60%;
+}
+#Form_password{
+    margin-left: 18%;
+    width: 60%;
+}
+
+#Form_FormikSubmitButton{
+    text-decoration: none;
+    width: 180px;
+    border-radius: 4%;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    border-style: none;
+    font-weight: bolder;
+    font-size: 16px;
+    background-color: #3483FA;
+    box-shadow: rgba(140, 138, 138, 0.1) 0px 4px 12px;
+    margin-top: 15px;
+    margin-left: 25%;
+}

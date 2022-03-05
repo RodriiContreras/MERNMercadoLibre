@@ -12,6 +12,27 @@
     transition: .2s;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
+
+#CardProduct_Container:hover #CardProduct_Link #CardProducts_FinalPrice{
+visibility: visible;
+}
+#CardProduct_Container:hover #CardProduct_Link #CardProduct_Name{
+visibility: visible;
+}
+#CardProduct_Container:hover #CardProduct_Link #CardProduct_Price{
+    transition: .5s;  
+    padding-top: 25px;
+}
+#CardProduct_Container:hover #CardProduct_Link #CardProduct_PriceOffert{
+    transition: .5s;  
+    padding-top: 35px;
+}
+#CardProduct_Container:hover #CardProduct_Link #CardProduct_PriceInInstallments{
+    transition: .5s;  
+    padding-top: 12px;
+}
+
 #CardProduct_ImagesContainer{
     border-bottom: 1px solid rgb(196, 195, 195);
 }
@@ -27,29 +48,33 @@
     margin-bottom: 0;
 }
 
+
+
 #CardProducts_FinalPrice{
-    font-size: 14px;
+    visibility: hidden;
+    font-size: 17px;
     text-decoration: line-through;
     position: absolute;
-padding-left: 20px;
+padding-left: 25px;
 color: rgb(133, 131, 131);
 }
 #CardProduct_Name{
+    visibility: hidden;
     color: rgb(130, 128, 128);
     padding-left: 20px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 #CardProduct_Price{
     color: rgb(53, 53, 53);
     padding-top: 15px;
-    padding-left: 15px;
+    padding-left: 20px;
     font-weight: bolder;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 28px;
 }
 #CardProduct_PriceOffert{
     padding-left: 17px;
-    color: rgb(26, 145, 26);
+    color: rgb(27, 192, 27);
     padding-top: 20px;
     font-weight: bolder;
     font-family: 'Source Sans Pro', sans-serif;
@@ -76,5 +101,4 @@ color: rgb(133, 131, 131);
 #CardProduct_Link{
     text-decoration: none;
     width: 224px;
-    background-color: aqua;
 }
