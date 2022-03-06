@@ -40,9 +40,8 @@
 }
 
 #Form_LoginLinkRegister{
-    position: absolute;
-    margin-top: 50px;
-    left:15%;
+    margin-left: 48px;
+    margin-top:37px;
     width: 250px;
 }
 #Register_FormikLinkHome{
@@ -60,8 +59,35 @@
     margin-top: 15px;
 }
 
+#Form_LoginErrorsContainer{
+    margin-top: 10px;
+    border-radius: 2%;
+    border: 1px solid #cc896c;
+    width: 200px;
+    background-color: #f8d9d9;
 
+}
+#Form_PLoginError{
+    color: #D84000;
+    font-weight: bolder;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#Form_PLoginSuccess{
+    color: #f8f8f8;
+    font-weight: bolder;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#Form_LoginSuccessContainer{
+    margin-top: 10px;
+    border-radius: 2%;
+    border: 1px solid #96ce52;
+    width: 200px;
+    background-color: #87D185;
+}
 
+#Form_LoginErrors{
+    margin-top: 10px;
+}
 #Register_FormikSubmitButton{
     text-decoration: none;
     width: 180px;
@@ -88,6 +114,6 @@
     margin-left: 40px;
     margin-top: 200px;
     width: 300px;
-    height: 300px;
+    height: auto;
     background-color: white;
 }

@@ -16,9 +16,8 @@ const Navbar =() => {
     <>
     <div id='navbar_content'>
 
-      <div>
-       <Link to='/'><img src={meliLatam} id='MELI_logo' alt='logo MercaLibre'/></Link>
-      </div>
+       <Link to='/' id='Meli_LogoContent'><img src={meliLatam} id='MELI_logo' alt='logo MercaLibre'/></Link>
+    
 
 
       <div id='searchbox_container'>
@@ -44,7 +43,7 @@ const Navbar =() => {
           <li class='landing_subItem'><Link className='landing_subItemLink' to='/product/indumentary'>Indumentary</Link></li>
           <li class='landing_subItem'><Link className='landing_subItemLink' to=''>History</Link></li>
           <li class='landing_subItem'><Link className='landing_subItemLink' to='/product/sell-Products'>Sell</Link></li>
-          <li class='landing_subItem'><Link className='landing_subItemLink' to=''>Help</Link></li>
+          <li class='landing_subItem'><Link className='landing_subItemLink' to='/help'>Help</Link></li>
         </ul>
 
         <div id='navbar_envios'>

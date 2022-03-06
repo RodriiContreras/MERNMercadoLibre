@@ -6,25 +6,32 @@ import * as Yup from 'yup'
 const  FormFormik = () => {
    const [data, setData] = useState([])
    const [booleanPathToLogin, setBooleanPathToLogin] = useState(false)
-
-   useEffect(() => {
-    fetch("http://localhost:8080/auth/Register" ,{
-      method:'POST',
-      mode:'cors',
-      headers: {
-        'Content-Type':'application/json'
-      },
-      body: data})
-      .then(resp => resp.json())
-      .then(resp =>{
-        console.log(resp)
-        if(resp.msg === 'Success'){
-          setBooleanPathToLogin(true)
-        }
-      })
-
-      .catch(err => console.log(err))
- }, [data])
+   const [errorMessage, setErrorMessage] = useState()
+   const [successMessage, setSuccessMessage] = useState()
+ const SubmitRegister = () =>{
+  fetch("http://localhost:8080/auth/Register" ,{
+    method:'POST',
+    mode:'cors',
+    headers: {
+      'Content-Type':'application/json'
+    },
+    body: data})
+    .then(resp => resp.json())
+    .then(resp =>{
+      console.log(resp)
+      if(resp.msg === 'Success'){
+        setBooleanPathToLogin(true)
+        setSuccessMessage(resp)
+      }
+      else{
+     let errores = resp.errors.map(error =>{
+          return error.msg
+        })
+          setErrorMessage(errores)
+      }
+    })
+  .catch(err => console.log(err))
+ }
 
   const schemaValidation=Yup.object({
   
@@ -61,6 +68,7 @@ const  FormFormik = () => {
        }}
        validationSchema={schemaValidation}
        onSubmit={async (values) => {
+         
          let stringify = JSON.stringify(values)
         setData(stringify)
        }}>
@@ -90,10 +98,23 @@ const  FormFormik = () => {
            type="password"
          />
 
+            {errorMessage &&
+            <div id='Form_LoginErrorsContainer'>
+                <ul id='Form_LoginErrors'>
+                {errorMessage.map( error =>(
+                  <li><p id='Form_PLoginError'>{error}</p></li>
+                ))}
+                </ul>
+                </div>
+                 }
 
-  {booleanPathToLogin ?  <Link to='/auth/login'><button id='Register_FormikSubmitButton'>Go Login</button></Link>   : <button id='Register_FormikSubmitButton' type="submit">Submit</button>  }
+                 { successMessage && <div id='Form_LoginSuccessContainer'><p id='Form_PLoginSuccess'>Se ha creado correctamente su usuario</p></div>}
+
+  
+
+  {booleanPathToLogin ? <Link to='/auth/login'><button id='Register_FormikSubmitButton'>Go Login</button></Link>:<button id='Register_FormikSubmitButton' onClick={SubmitRegister} type="submit">Submit</button>  }
    
-         <Link id='Register_LinkToLogin' to='/auth/login'>You already have an account?</Link>
+         <Link id='Register_LinkToLogin' to='/auth/login'>You have an account?</Link>
        </Form>
      </Formik>
      </div>

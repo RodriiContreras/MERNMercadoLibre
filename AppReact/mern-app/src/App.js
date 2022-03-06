@@ -4,6 +4,7 @@ import './App.css';
 import Login from "./components/auth/loginComponent/Login";
 import Register from "./components/auth/loginComponents/registerComponents/Register";
 import AuthContextProvider from "./components/Context/AuthContext";
+import Help from "./components/help/Help";
 import Navbar from "./components/navbar/Navbar";
 import SellProducts from "./components/ProductsCategoriesComponents/Sell-Products/SellProducts";
 import MainForm from "./components/ProductsCategoriesComponents/Sell-Products/SellProductsID/MainForm";
@@ -34,6 +35,9 @@ function App() {
    <Route exact path='/product/sell-Products' element={<SellProducts/>}/>
 
    <Route exact path='/product/sell-Products/:category' element={<MainForm/>}/>
+
+
+   <Route exact path='/help' element={<Help/>}/>
 
       </Routes>
     </div>

@@ -75,7 +75,10 @@
 }
 #email{
     border-radius: 2px;
-    border: 1px solid rgb(138, 137, 137);
+    border-bottom: 2px solid rgb(138, 137, 137);
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
     font-family: 'Source Sans Pro', sans-serif;
     box-shadow: rgba(140, 138, 138, 0.1) 0px 4px 12px;
     margin-top: 5px;
@@ -84,7 +87,10 @@
 
 #cellphone{
     border-radius: 2%;
-    border: 1px solid rgb(138, 137, 137);
+    border-bottom: 2px solid rgb(138, 137, 137);
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
     box-shadow: rgba(140, 138, 138, 0.1) 0px 4px 12px;
     margin-top: 5px;
     height: 30px;
@@ -93,22 +99,26 @@
 
 #password{
     border-radius: 2px;
-    border: 1px solid rgb(138, 137, 137);
+    border-bottom: 2px solid rgb(138, 137, 137);
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
     box-shadow: rgba(140, 138, 138, 0.1) 0px 4px 12px;
     margin-top: 5px;
     font-family: 'Source Sans Pro', sans-serif;
     height: 30px;
 }
 #Register_LinkToLogin{
-    left: 13%;
-    position: absolute;
-    width: 300px;
-    margin-top: 50px;
+    margin-left:50px;
+    width: 700px;
+    margin-top: 60px;
 }
-
 #dni{
     border-radius: 2px;
-    border: 1px solid rgb(138, 137, 137);
+    border-bottom: 2px solid rgb(138, 137, 137);
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
     box-shadow: rgba(140, 138, 138, 0.1) 0px 4px 12px;
     margin-top: 4px;
     height: 30px;
@@ -131,6 +141,6 @@
     margin-left: 40px;
     margin-top: 200px;
     width: 300px;
-    height: 500px;
+    height: auto;
     background-color: white;
 }

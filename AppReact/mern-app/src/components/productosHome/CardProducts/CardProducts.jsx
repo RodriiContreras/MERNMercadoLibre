@@ -4,13 +4,7 @@ import './cardProducts.css'
 import ImagenPrueba from '../imagenesprueba/fotoprueba.png'
 
 
-const  CardProducts = ({price, name, stock}) => {
-  const [boolean, setBoolean] = useState(true)
-
-  const revealItems = () =>{
- document.getElementById('CardProduct_Name').style.display='block'
-}
- console.log(boolean)
+const  CardProducts = ({price, name }) => {
   let PriceDivisor = price / 6
   
   //PRICE rounded 
@@ -22,7 +16,7 @@ const  CardProducts = ({price, name, stock}) => {
 
   return (
     <>
-    <div id='CardProduct_Container' onMouseOver={()=> revealItems() }>
+    <div id='CardProduct_Container'>
     <a href=''id='CardProduct_Link'>
         <div id='CardProduct_ImagesContainer'><img src={ImagenPrueba} id='CardProduct_Images' alt='Product Image'/></div>
         <div id='CardProducts_PriceContainer'>

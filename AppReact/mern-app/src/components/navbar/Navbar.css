@@ -7,8 +7,10 @@
 
 #MELI_logo{
     width: 140px;
+}
+#Meli_LogoContent{
     position: relative;
-    left: 350px;
+    left: 19%;
 }
 #searchbox_container{
     background-color: white;

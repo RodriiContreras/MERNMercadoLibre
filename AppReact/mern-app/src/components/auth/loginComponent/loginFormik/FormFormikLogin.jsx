@@ -9,8 +9,11 @@ import { AuthContext } from '../../../Context/AuthContext'
 const FormFormikLogin = () => {
     const [data, setData] = useState([])
     const [booleanPath, setBooleanPath] = useState(false)
-    const {dataAuth , setDataAuth} = useContext(AuthContext)
-   
+    const {setDataAuth} = useContext(AuthContext)
+    const [errorMessage, setErrorMessage] = useState()
+  
+
+    console.log(errorMessage)
     useEffect(() => {
     fetch('http://localhost:8080/auth/Login',{
         method:'POST',
@@ -26,6 +29,15 @@ const FormFormikLogin = () => {
             setBooleanPath(true)
             localStorage.setItem('token',resp.token)
             setDataAuth(resp.userName)
+        }
+        else{
+          let erroresMessage = resp.errors.map(error =>{
+            if(error.length = 1 ){
+              return error.msg
+            }
+          })
+          
+          setErrorMessage(erroresMessage)
         }
     })
     .catch(error=> console.log(error))
@@ -65,6 +77,15 @@ const FormFormikLogin = () => {
                   type="password"
                 />
 
+                <div id='Form_LoginErrorsContainer'>{errorMessage ? 
+                <ul id='Form_LoginErrors'>
+                {errorMessage.map( error =>(
+                  <li><p id='Form_PLoginError'>{error}</p></li>
+                ))}
+                </ul>
+                 : ''}</div>
+
+ 
                {booleanPath ?<Link to='/'><button id='Register_FormikSubmitButton'>Ir al Home</button></Link>:  <button id='Register_FormikSubmitButton' type="submit">Submit</button> }
              
                 <Link id='Form_LoginLinkRegister' to='/auth/Register'>You dont have an account?</Link>

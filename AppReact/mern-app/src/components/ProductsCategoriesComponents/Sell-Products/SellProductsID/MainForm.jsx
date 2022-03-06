@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import SellProductsNavbar from '../SellProducts-navbar/SellProductsNavbar'
 import {Form,Formik, Field} from 'formik'
 import './MainForm.css'
-import { Link } from 'react-router-dom'
  
 const MainForm = () => {
     const {category} = useParams()
@@ -26,8 +25,8 @@ const MainForm = () => {
               }}
             >
               <Form>
-                <label className='Form_MainvalidateLabel' htmlFor="email"> Validate E-mail</label>
-                <Field id="Form_email" name="email" type='email' placeholder="E-mail" />
+                <label className='Form_MainvalidateLabel' htmlFor="name">Set name of your Product</label>
+                <Field id="Form_email" name="name" type='name' placeholder="Example : Audi R-8" />
 
                 <label className='Form_MainvalidateLabel' htmlFor="description">Set description of your product</label>
                 <Field id="Form_description" name="description" type='description' placeholder="description" />
