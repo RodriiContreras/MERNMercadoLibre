@@ -10,6 +10,7 @@
 }
 .Form_MainvalidateLabel{
     margin-top: 2%;
+    
     margin-left: 18%;
     width: 60%;
     font-size: 18px;
@@ -18,22 +19,43 @@
 #Form_email{
     margin-left: 18%;
     width: 60%;
+    border-bottom: 2px solid #3483FA;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
 }
 #Form_description{
     margin-left: 18%;
     width: 60%;
+    border-bottom: 2px solid #3483FA;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
 }
 #Form_stock{
     margin-left: 18%;
     width: 60%;
+    border-bottom: 2px solid #3483FA;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
 }
 #Form_price{
     margin-left: 18%;
     width: 60%;
+    border-bottom: 2px solid #3483FA;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
 }
+
 #Form_password{
     margin-left: 18%;
     width: 60%;
+    border-bottom: 2px solid #3483FA;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
 }
 
 #Form_FormikSubmitButton{

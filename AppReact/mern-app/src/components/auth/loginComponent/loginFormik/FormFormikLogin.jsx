@@ -14,8 +14,9 @@ const FormFormikLogin = () => {
   
 
     console.log(errorMessage)
-    useEffect(() => {
-    fetch('http://localhost:8080/auth/Login',{
+
+    const LoginSubmit = ()=>{
+      fetch('http://localhost:8080/auth/Login',{
         method:'POST',
         mode:'cors',
         headers:{
@@ -29,6 +30,7 @@ const FormFormikLogin = () => {
             setBooleanPath(true)
             localStorage.setItem('token',resp.token)
             setDataAuth(resp.userName)
+           setErrorMessage()
         }
         else{
           let erroresMessage = resp.errors.map(error =>{
@@ -41,7 +43,7 @@ const FormFormikLogin = () => {
         }
     })
     .catch(error=> console.log(error))
-    }, [data])
+    }
     
     const validationSchema = Yup.object({
         email:Yup.string()
@@ -77,16 +79,17 @@ const FormFormikLogin = () => {
                   type="password"
                 />
 
-                <div id='Form_LoginErrorsContainer'>{errorMessage ? 
+              {errorMessage ? 
+                <div id='Form_LoginErrorsContainer'>
                 <ul id='Form_LoginErrors'>
                 {errorMessage.map( error =>(
                   <li><p id='Form_PLoginError'>{error}</p></li>
                 ))}
-                </ul>
-                 : ''}</div>
+                </ul></div>
+                 : ''}
 
  
-               {booleanPath ?<Link to='/'><button id='Register_FormikSubmitButton'>Ir al Home</button></Link>:  <button id='Register_FormikSubmitButton' type="submit">Submit</button> }
+               {booleanPath ?<Link to='/'><button id='Register_FormikSubmitButtonSuccess'>Ir al Home</button></Link>:  <button id='Register_FormikSubmitButton' onClick={LoginSubmit} type="submit">Submit</button> }
              
                 <Link id='Form_LoginLinkRegister' to='/auth/Register'>You dont have an account?</Link>
               </Form>

@@ -22,6 +22,7 @@ const  FormFormik = () => {
       if(resp.msg === 'Success'){
         setBooleanPathToLogin(true)
         setSuccessMessage(resp)
+        setErrorMessage()
       }
       else{
      let errores = resp.errors.map(error =>{

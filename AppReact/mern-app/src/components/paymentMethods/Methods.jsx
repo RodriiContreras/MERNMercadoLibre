@@ -2,50 +2,51 @@ import React from 'react'
 import './methods.css'
 import { faCreditCard,faHandHoldingDollar,faMoneyBill,faCirclePlus} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 const Methods = () => {
   return (
    <>
    <div id='methodsPayment_container'>
       
        <div id='methodsPayment_group1'>
-        <a  href='' id='methodsPayment_CardContainer'>
+        <Link to='/' id='methodsPayment_CardContainer' >
         <FontAwesomeIcon id='methodsPayment_card' icon={faCreditCard}/>
-        </a>
+        </Link>
         <div>
        <p className='methodsPayment_parraph'>Credit Card</p>
-       <a className='methodsPayment_link' href=''> See banking promotions</a>
+       <Link className='methodsPayment_link' to=''> See banking promotions</Link>
        </div>
        </div> 
 
        <div>
-       <a  href='' id='methodsPayment_CardContainer'>
+       <Link  to='' id='methodsPayment_CardContainer'>
         <FontAwesomeIcon id='methodsPayment_card' icon={faCreditCard}/>
-        </a>
+        </Link>
        <p className='methodsPayment_parraph'>Debit Card</p>
-       <a className='methodsPayment_link' href=''>Show More</a>
+       <Link className='methodsPayment_link' to=''>Show More</Link>
 
        </div>
 
        <div>
-       <a  href='' id='methodsPayment_CardContainer'>
+       <Link  to='' id='methodsPayment_CardContainer'>
         <FontAwesomeIcon id='methodsPayment_card' icon={faHandHoldingDollar}/>
-        </a>
+        </Link>
        <p className='methodsPayment_parraph'>Installments without card</p>
-       <a className='methodsPayment_link' href=''>Know Mercado Crédito</a>
+       <Link className='methodsPayment_link' to=''>Know Mercado Crédito</Link>
        </div> 
 
        <div id='methodsPayment_CardContainerMaster'>
-       <a  href='' id='methodsPayment_CardContainer'>
+       <Link  to='' id='methodsPayment_CardContainer'>
         <FontAwesomeIcon id='methodsPayment_card' icon={faMoneyBill}/>
-        </a>
+        </Link>
        <p className='methodsPayment_parraph'>Cash</p>
-       <a className='methodsPayment_link' href=''>Show More</a>
+       <Link className='methodsPayment_link' to=''>Show More</Link>
        </div> 
 
        <div id='methodsPayment_CardContainerMasterPlus'>
-       <a  href='' id='methodsPayment_CardContainerPlus'>
+       <Link  to='' id='methodsPayment_CardContainerPlus'>
         <FontAwesomeIcon id='methodsPayment_card' icon={faCirclePlus}/>
-        </a>
+        </Link>
        </div> 
    </div>
    </>
