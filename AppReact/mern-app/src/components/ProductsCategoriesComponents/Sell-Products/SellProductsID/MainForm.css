@@ -4,7 +4,7 @@
     position: absolute;
     width: 400px;
     margin-top: 110px;
-    height: 390px;
+    height: auto;
     left: 37%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
@@ -18,6 +18,7 @@
 }
 #Form_email{
     margin-left: 18%;
+    height: 40px;
     width: 60%;
     border-bottom: 2px solid #3483FA;
     border-top: 1px solid rgb(255, 255, 255);
@@ -26,6 +27,7 @@
 }
 #Form_description{
     margin-left: 18%;
+    height: 40px;
     width: 60%;
     border-bottom: 2px solid #3483FA;
     border-top: 1px solid rgb(255, 255, 255);
@@ -34,6 +36,7 @@
 }
 #Form_stock{
     margin-left: 18%;
+    height: 40px;
     width: 60%;
     border-bottom: 2px solid #3483FA;
     border-top: 1px solid rgb(255, 255, 255);
@@ -42,6 +45,7 @@
 }
 #Form_price{
     margin-left: 18%;
+    height: 40px;
     width: 60%;
     border-bottom: 2px solid #3483FA;
     border-top: 1px solid rgb(255, 255, 255);
@@ -49,16 +53,9 @@
     border-right: 1px solid rgb(255, 255, 255);
 }
 
-#Form_password{
-    margin-left: 18%;
-    width: 60%;
-    border-bottom: 2px solid #3483FA;
-    border-top: 1px solid rgb(255, 255, 255);
-    border-left: 1px solid rgb(255, 255, 255);
-    border-right: 1px solid rgb(255, 255, 255);
-}
 
 #Form_FormikSubmitButton{
+    height: 40px;
     text-decoration: none;
     width: 180px;
     border-radius: 4%;

@@ -7,38 +7,38 @@ import { useContext } from 'react'
 import { AuthContext } from '../../../Context/AuthContext'
 
 const FormFormikLogin = () => {
-    const [data, setData] = useState([])
     const [booleanPath, setBooleanPath] = useState(false)
     const {setDataAuth} = useContext(AuthContext)
     const [errorMessage, setErrorMessage] = useState()
-  
+    const [MessageSucess, setMessageSucess] = useState()
 
-    console.log(errorMessage)
 
-    const LoginSubmit = ()=>{
-      fetch('http://localhost:8080/auth/Login',{
+    
+
+
+    const LoginSubmit = (stringify)=>{
+    fetch('http://localhost:8080/auth/Login',{
         method:'POST',
         mode:'cors',
         headers:{
             'Content-Type':'application/json'
         },
-        body:data})
+        body: stringify})
     .then(resp => resp.json())
-    .then(resp =>  {
+    .then(resp => {
       console.log(resp)
         if(resp.msg === 'Success'){
-            setBooleanPath(true)
+            setErrorMessage()
+            setMessageSucess(resp)
             localStorage.setItem('token',resp.token)
             setDataAuth(resp.userName)
-           setErrorMessage()
         }
-        else{
+        if(resp.errors){
           let erroresMessage = resp.errors.map(error =>{
             if(error.length = 1 ){
               return error.msg
             }
           })
-          
           setErrorMessage(erroresMessage)
         }
     })
@@ -63,36 +63,48 @@ const FormFormikLogin = () => {
               validationSchema={validationSchema}
               onSubmit={async (values) => {
                   let stringify = JSON.stringify(values)
-                setData(stringify)
+                  LoginSubmit(stringify)
               }}
             >
-              <Form>
+              {props => { 
+              return(
+              <Form onSubmit={props.handleSubmit}>
       
                 <label className='Form_LoginvalidateLabel' htmlFor="email"> Validate E-mail</label>
-                <Field id="email" name="email" type='email' placeholder="E-mail " />
+            
+                <Field id="email" onChange={props.handleChange} onBlur={props.handleBlur} name="email" type='email' placeholder="E-mail " />
+              {props.errors.email ?<div className='Form_errorsYupContent'> <p className='Form_errorsYup'>{props.errors.email}</p></div> : null}
       
                  <label className='Form_LoginvalidateLabel' htmlFor="password">Create Password!</label>
                 <Field
+                onChange={props.handleChange}
+                 onBlur={props.handleBlur}
                   id="password"
                   name="password"
                   placeholder="password"
                   type="password"
                 />
 
-              {errorMessage ? 
+              {props.errors.password ?<div className='Form_errorsYupContent'> <p className='Form_errorsYup'>{props.errors.password}</p></div> : null}
+
+              {errorMessage &&
                 <div id='Form_LoginErrorsContainer'>
                 <ul id='Form_LoginErrors'>
                 {errorMessage.map( error =>(
                   <li><p id='Form_PLoginError'>{error}</p></li>
                 ))}
                 </ul></div>
-                 : ''}
+                 }
 
  
-               {booleanPath ?<Link to='/'><button id='Register_FormikSubmitButtonSuccess'>Ir al Home</button></Link>:  <button id='Register_FormikSubmitButton' onClick={LoginSubmit} type="submit">Submit</button> }
+               {MessageSucess &&<Link to='/'><button id='Register_FormikSubmitButtonSuccess'>Ir al Home</button></Link>}
+ 
+                {!MessageSucess && <button id='Register_FormikSubmitButton' type="submit">Submit</button>}       
+  
              
                 <Link id='Form_LoginLinkRegister' to='/auth/Register'>You dont have an account?</Link>
               </Form>
+)}}
             </Formik>
             </div>
           </div>

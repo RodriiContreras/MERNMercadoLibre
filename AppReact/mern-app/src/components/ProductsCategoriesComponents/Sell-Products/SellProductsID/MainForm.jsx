@@ -1,12 +1,51 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useParams } from 'react-router-dom'
 import SellProductsNavbar from '../SellProducts-navbar/SellProductsNavbar'
 import {Form,Formik, Field} from 'formik'
+import * as Yup from 'yup'
 import './MainForm.css'
  
 const MainForm = () => {
     const {category} = useParams()
+    const [valuesJSON, setValuesJSON] = useState([])
    console.log(category)
+   console.log(valuesJSON)
+
+   const SubmitCreateProduct = () =>{
+    fetch("http://localhost:8080/product/sell-Products" ,{
+      method:'POST',
+      mode:'cors',
+      headers: {
+        'Content-Type':'application/json'
+      },
+      body: valuesJSON})
+      .then(resp => resp.json())
+      .then(resp =>{
+        console.log(resp)
+      })
+    .catch(err => console.log(err))
+   }
+
+
+   const schemaValidation=Yup.object({
+  
+    name:Yup.string()
+    .required('Name is required'),
+
+    description:
+    Yup.string()
+    .required('Description is required'),
+
+    stock:
+    Yup.string()
+    .required('Stock is required'),
+
+    price:
+    Yup.string()
+    .required('Price is required')
+
+  });
+
   return (
    <>
    <SellProductsNavbar/>
@@ -14,14 +53,17 @@ const MainForm = () => {
    <div id='Products_FormikContainer'>
    <Formik
               initialValues={{
-                email: '',
-                password:'',
+                name:'',
                 description:'',
                 category:category,
-                stock:''
+                stock:'',
+                price:'',
+                user:'62164e387658b8f09f9c36d8'
               }}
+              validationSchema={schemaValidation}
               onSubmit={async (values) => {
-            console.log(values)
+                let stringifyValues = JSON.stringify(values)
+                setValuesJSON(stringifyValues)
               }}
             >
               <Form>
@@ -37,16 +79,8 @@ const MainForm = () => {
 
                 <label className='Form_MainvalidateLabel' htmlFor="price">Insert price of your product</label>
                 <Field id="Form_price" name="price" type='price' placeholder="Example : $50000" />
-      
-                 <label className='Form_MainvalidateLabel' htmlFor="password">Create Password!</label>
-                <Field
-                  id="Form_password"
-                  name="password"
-                  placeholder="Example"
-                  type="password"
-                />
 
-         <button id='Form_FormikSubmitButton' type="submit">Submit</button>
+         <button id='Form_FormikSubmitButton' type="submit" onClick={SubmitCreateProduct} >Submit</button>
               </Form>
             </Formik>
             </div>

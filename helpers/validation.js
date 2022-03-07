@@ -5,7 +5,7 @@ const emailExists = async (email = '')=>{ // validation where we find input emai
     const userEmailExists = await User.findOne({email})
 
     if(userEmailExists){
-       throw new Error('El Email ya existe')
+       throw new Error('Email already exists')
     }
 }
 
@@ -14,7 +14,7 @@ const loginEmailNoExists = async (email = '')=>{ //validation for email
     const userEmailExists = await User.findOne({email})
 
     if(!userEmailExists){
-       throw new Error('El Email no existe')
+       throw new Error('Email no exists')
     }
 }
 
@@ -22,7 +22,7 @@ const dniExists = async (dni = '') =>{
     const userDniExists = await User.findOne({dni})
 
     if(userDniExists){
-        throw new Error('El dni ya existe')
+        throw new Error('Dni already exists')
     }
 }
 
@@ -30,7 +30,7 @@ const cellphoneExists = async (cellphone = '') =>{
     const userCellphoneExists = await User.findOne({cellphone})
 
     if(userCellphoneExists){
-        throw new Error('El telefono ya existe')
+        throw new Error('Cellphone already exists')
     }
 }
 

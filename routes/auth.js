@@ -12,22 +12,22 @@ const router = Router();
 
 //esta ruta recibe email - name - password - cellphone - dni -lastname 
 router.post('/Register', [
-    check('email','El email no es valido').isEmail(),
-    check('email','El email ya existe').custom(emailExists),
-    check('dni','El dni es necesario').not().isEmpty(),
-    check('password','La contraseña es necesaria').not().isEmpty(),
-    check('dni','El dni es un conjunto de numeros').isNumeric(),
-    check('cellphone','El numero ya existe').custom(cellphoneExists),
-    check('dni','El dni ya existe').custom(dniExists),
+    check('email','Not is a Email').isEmail(),
+    check('email','Email already exists').custom(emailExists),
+    check('dni','Dni required').not().isEmpty(),
+    check('password','Password required').not().isEmpty(),
+    check('dni','Dni is full number').isNumeric(),
+    check('cellphone','CellPhone already exists').custom(cellphoneExists),
+    check('dni','Dni already exists').custom(dniExists),
     validation
 ],userRegister)
 
 
 //esta ruta recibe email - name - password - cellphone - dni -lastname 
 router.post('/Login',[
-    check('email','El email no es valido').isEmail(),
-    check('email','El email no existe').custom(loginEmailNoExists),
-    check('password','la contraseña es necesaria').not().isEmpty(),
+    check('email','Not is a Email').isEmail(),
+    check('email','Email no exists').custom(loginEmailNoExists),
+    check('password','Password required').not().isEmpty(),
     validation
 ],userLogin)
 

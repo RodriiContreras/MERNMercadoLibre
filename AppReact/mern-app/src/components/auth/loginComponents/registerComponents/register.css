@@ -51,6 +51,28 @@
     background-color: #3483FA;
 }
 
+.Form_errorsYup{
+    padding-left: 2px;
+    padding-top: 5px;
+    color: rgb(199, 34, 34);
+    font-weight: bolder;
+}
+
+.Form_errorsYupContent{
+    margin-top: 5px;
+    background-color: #f8d9d9;
+    border-left: 2px solid red;
+    width: 90%;
+    height: 40px;
+}
+#Form_errorsYupContentEmail{
+    margin-top: 5px;
+    background-color: #f8d9d9;
+    width: 90%;
+    border-left: 2px solid red;
+    height: 60px;
+}
+
 .Form_validateLabel{
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bolder;
