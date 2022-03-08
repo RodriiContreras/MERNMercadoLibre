@@ -5,13 +5,15 @@ import CardProducts from './CardProducts/CardProducts'
 
 const ProductosHome = () => {
     const [productos, setproductos] = useState([])
-    const [boolean, setBoolean] = useState(false)
     useEffect(() => {
         fetch('/product/buy-products').then(res =>{
             if(res.ok){
                 return res.json()
             }
-        }).then(respJson => setproductos(respJson.msg))
+        }).then(respJson =>{
+            const almacenador = respJson.msg.slice(0,5)
+             setproductos(almacenador)
+        })
     }, [])
     
 

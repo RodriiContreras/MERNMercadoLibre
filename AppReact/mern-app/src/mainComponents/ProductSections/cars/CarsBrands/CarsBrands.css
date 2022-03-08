@@ -1,0 +1,63 @@
+#CarsBrands_Content{
+    width: 45%;
+    margin-top: 90px;
+    height: auto;
+    margin-left: 25.5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#CarsBrands_CardContainer{
+    margin-left: 30px;
+    margin-top: 10px;
+    border: 1px solid rgb(211, 210, 210);
+    background-color: white;
+    border-radius: 3%;
+    width: 29%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#CarsBrands_CardContainer:hover{
+    transition: .2s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#CarsBrands_ImagesContainer{
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+#CarsBrands_LinkContainer{
+    text-decoration: none;
+    color: black;
+}
+
+#CarsBrands_Price{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-left: 20px;
+    color: rgb(46, 46, 46);
+    font-size: 28px;
+    margin-bottom: 0;
+}
+#CarsBrands_Name{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 0;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: bolder;
+    color: rgb(51, 51, 51);
+}
+#CarsBrands_Description{
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 20px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+#CarsBrands_Brand{
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 20px;
+    font-size: 18px;
+    color: rgb(135, 135, 135);
+}
+#CarsBrands_Images{
+    width: 100%;
+    height: 200px;
+}

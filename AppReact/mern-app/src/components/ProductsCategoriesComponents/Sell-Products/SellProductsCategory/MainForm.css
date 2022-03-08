@@ -25,6 +25,33 @@
     border-left: 1px solid rgb(255, 255, 255);
     border-right: 1px solid rgb(255, 255, 255);
 }
+
+.Form_errorsYupContentProducts{
+    margin-top: 5px;
+    background-color: #f8d9d9;
+    border-left: 2px solid red;
+    height: 40px;
+    width: 60%;
+    margin-left: 18%;
+}
+.Form_errorsYupProducts{
+    margin-left: 10px;
+    padding-left: 2px;
+    padding-top: 5px;
+    color: rgb(199, 34, 34);
+    font-weight: bolder;
+}
+
+#Form_brand{
+    margin-left: 18%;
+    height: 40px;
+    width: 60%;
+    border-bottom: 2px solid #3483FA;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
+}
+
 #Form_description{
     margin-left: 18%;
     height: 40px;

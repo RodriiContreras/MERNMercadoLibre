@@ -7,8 +7,12 @@ import AuthContextProvider from "./components/Context/AuthContext";
 import Help from "./components/help/Help";
 import Navbar from "./components/navbar/Navbar";
 import SellProducts from "./components/ProductsCategoriesComponents/Sell-Products/SellProducts";
-import MainForm from "./components/ProductsCategoriesComponents/Sell-Products/SellProductsID/MainForm";
+import MainForm from "./components/ProductsCategoriesComponents/Sell-Products/SellProductsCategory/MainForm";
 import Home from './mainComponents/Home';
+import CarsBrands from "./mainComponents/ProductSections/cars/CarsBrands/CarsBrands";
+import CarsSections from "./mainComponents/ProductSections/cars/CarsSections";
+import IndumentarySection from "./mainComponents/ProductSections/indumentary/IndumentarySection";
+import SupermarketSection from "./mainComponents/ProductSections/supermarket/SupermarketSection";
 function App() {
   return (
     <AuthContextProvider>
@@ -21,10 +25,17 @@ function App() {
 
 
    {/*Path To Products*/}
-   <Route exact path='/product/cars'  element={<Navbar/>}/>
-   <Route exact path='/product/supermarket'  element={<Navbar/>}/>
-   <Route exact path='/product/indumentary'  element={<Navbar/>}/>
-   <Route exact path='/product/technology'  element={<Navbar/>}/>
+   <Route exact path='/buy-products/cars'  element={<CarsSections/>}/>
+   <Route exact path='/buy-products/cars/:brand'  element={<CarsBrands/>}/>
+
+
+   <Route exact path='/buy-products/supermarket'  element={<SupermarketSection/>}/>
+
+   <Route exact path='/buy-products/indumentary'  element={<IndumentarySection/>}/>
+   {/* <Route exact path='/buy-products/indumentary/:category'  element={<CarsBrands/>}/> */}
+
+   <Route exact path='/buy-products/technology'  element={<Navbar/>}/>
+
 
 
    <Route exact path='/auth/Register'  element={<Register/>}/>

@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { createProduct, deleteProducts, updateProduct, getProducts, getProductsById } = require('../controllers/products');
+const { createProduct, deleteProducts, updateProduct, getProducts, getProductsById ,getProductsByCategory,getProductsByBrand} = require('../controllers/products');
  const {check} = require('express-validator');
  const { validation } = require('../middlewares/camposValidados');
 const { categoryExistsValidation, userExistsValidation } = require('../helpers/products-validations');
@@ -9,10 +9,22 @@ const router = Router();
  router.get('/buy-products',[
  ],getProducts)
 
-router.get('/buy-products/:id',[
+ router.get('/buy-productsCategory/:category',[
+   check('category','Category required').not().isEmpty(),
+   validation
+] ,getProductsByCategory)
+
+router.get('/buy-productsBrand/:brand',[
+   check('brand','Brand required').not().isEmpty(),
+   validation
+] ,getProductsByBrand)
+
+
+router.get('/buy-product/:id',[
     check('id','no es un ID valido de mongo').isMongoId(),
     validation
  ] ,getProductsById)
+
 
 
  router.delete('/delete-product/:id',[

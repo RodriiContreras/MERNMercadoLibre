@@ -1,0 +1,41 @@
+#CarsCategories_CardContentFlex{
+    justify-content: space-around;
+    display: flex;
+    margin-top: 40px;
+    margin-left: 18%;
+    width: 60%;
+}
+
+.CarsCategories_CardBorders{
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 6%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: rgb(235, 233, 233);
+    border: 1px solid rgb(225, 223, 223);
+    width: 200px;
+    height: 160px
+}
+.CarsCategories_p{
+    margin-left: 37%;
+    color: black;
+}
+.CarsCategories_Link{
+    text-decoration: none;
+}
+
+#CarsCategories_TshirtLogo{
+    width: 200px;
+    height: 120px;
+}
+#CarsCategories_JacketsLogo{
+    width: 200px;
+    height: 120px;
+}
+#CarsCategories_JeansLogo{
+    width: 200px;
+    height: 120px;
+}
+#CarsCategories_ShoesLogo{
+    width: 200px;
+    height: 120px;
+}

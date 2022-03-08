@@ -30,17 +30,17 @@ const Navbar =() => {
             <a className='landing_subItemLink'>Categories <FontAwesomeIcon id='SubItem_ArrowDownIcon' icon={faArrowDown}/></a>
             <div id='landing_desple'>
               <ul id=''>
-               <Link to='/product/cars'><li className='landing_despleLi'><div className='landing_despleDiv'>Cars</div></li></Link>
-               <Link to='/product/supermarket'><li className='landing_despleLi'><div className='landing_despleDiv'>Supermarket</div></li></Link>
-               <Link to='/product/technology'><li className='landing_despleLi'><div className='landing_despleDiv'>Technology</div></li></Link>
-               <Link to='/product/indumentary'><li className='landing_despleLi'><div className='landing_despleDiv'>Indumentary</div></li></Link>
+               <Link to='/buy-products/cars'><li className='landing_despleLi'><div className='landing_despleDiv'>Cars</div></li></Link>
+               <Link to='/buy-products/supermarket'><li className='landing_despleLi'><div className='landing_despleDiv'>Supermarket</div></li></Link>
+               <Link to='/buy-products/technology'><li className='landing_despleLi'><div className='landing_despleDiv'>Technology</div></li></Link>
+               <Link to='/buy-products/indumentary'><li className='landing_despleLi'><div className='landing_despleDiv'>Indumentary</div></li></Link>
                <Link to='/'><li className='landing_despleLi'><div className='landing_despleDiv'>Fitness</div></li></Link>
                <Link to='/'><li className='landing_despleLi'><div className='landing_despleDiv'>Kids</div></li></Link>
               </ul>
               </div>
           </li>
-          <li class='landing_subItem'><Link className='landing_subItemLink' to='/product/supermarket'>Supermarket</Link></li>
-          <li class='landing_subItem'><Link className='landing_subItemLink' to='/product/indumentary'>Indumentary</Link></li>
+          <li class='landing_subItem'><Link className='landing_subItemLink' to='/buy-products/supermarket'>Supermarket</Link></li>
+          <li class='landing_subItem'><Link className='landing_subItemLink' to='/buy-products/indumentary'>Indumentary</Link></li>
           <li class='landing_subItem'><Link className='landing_subItemLink' to=''>History</Link></li>
           <li class='landing_subItem'><Link className='landing_subItemLink' to='/product/sell-Products'>Sell</Link></li>
           <li class='landing_subItem'><Link className='landing_subItemLink' to='/help'>Help</Link></li>

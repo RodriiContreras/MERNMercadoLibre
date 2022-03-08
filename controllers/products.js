@@ -30,6 +30,39 @@ const getProductsById = async (req , res = response)=>{
      })
 }
 
+const getProductsByCategory = async (req , res = response)=>{ 
+    const {category}  = req.params
+     const product = await Product.find({})
+    const productFilter =  product.filter(item => item.category === category)
+
+     if(!productFilter){
+       res.status(404).json({
+           msg:'Products with this category no exists'
+       })
+     }
+
+     res.json({
+         msg:productFilter
+     })
+}
+
+const getProductsByBrand = async (req , res = response)=>{ 
+    const {brand}  = req.params
+     const product = await Product.find({})
+    const productFilter =  product.filter(item => item.brand === brand)
+
+     if(!productFilter){
+       res.status(404).json({
+           msg:'Products with this category no exists'
+       })
+     }
+
+     res.json({
+         msg:productFilter
+     })
+}
+
+
 const deleteProducts =  async (req,res=response)=>{
   const {id} = req.params
   const productoId = await Product.findByIdAndDelete(id)
@@ -105,6 +138,8 @@ module.exports= {
 getProducts,
 getProductsById,
 deleteProducts,
+getProductsByCategory,
+getProductsByBrand,
 updateProduct,
 createProduct
 }

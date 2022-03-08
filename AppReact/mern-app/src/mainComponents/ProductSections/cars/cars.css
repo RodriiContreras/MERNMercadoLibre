@@ -1,0 +1,56 @@
+#Products_CarsContainer{
+    background-color: aliceblue;
+    width: 77%;
+    margin-top: 5%;
+    margin-left: 9%;
+    display: flex;
+    justify-content: space-around;
+}
+#Form_brand{
+    margin-left: 18%;
+    height: 40px;
+    width: 60%;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
+}
+#CarsCategories_CardContentFlex{
+    justify-content: space-around;
+    display: flex;
+    margin-top: 40px;
+    margin-left: 18%;
+    width: 60%;
+}
+
+.CarsCategories_CardBorders{
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 6%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: rgb(235, 233, 233);
+    border: 1px solid rgb(225, 223, 223);
+    width: 200px;
+    height: 160px
+}
+.CarsCategories_p{
+    margin-left: 37%;
+    color: black;
+}
+.CarsCategories_Link{
+    text-decoration: none;
+}
+
+#CarsCategories_FordLogo{
+    margin-top: 20px;
+    width: 200px;
+}
+#CarsCategories_ChevroletLogo{
+    width: 200px;
+}
+#CarsCategories_RenaultLogo{
+    width: 200px;
+}
+#CarsCategories_VolkswagenLogo{
+    position: relative;
+    left: 17%;
+    width: 130px;
+}
