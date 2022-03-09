@@ -1,0 +1,136 @@
+#CardProductID_Container{
+    width: 75%;
+    height: 700px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: Flex;
+    border-radius: 1%;
+    margin-top: 100px;
+    margin-left: 6.5%;
+}
+
+#CardProductID_Container:hover #CardProductID_Link #CardProductID_Price{
+    transition: .5s;  
+    padding-top: 25px;
+}
+#CardProductID_Container:hover #CardProductID_Link #CardProductID_PriceOffert{
+    transition: .5s;  
+    padding-top: 35px;
+}
+#CardProductID_Container:hover #CardProductID_Link #CardProductID_PriceInInstallments{
+    transition: .5s;  
+    padding-top: 12px;
+}
+
+#CardProductID_ImagesContainer{
+    margin-top: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 58%;
+    height: 63%;
+    margin-left: 100px;
+    border-bottom: 1px solid rgb(196, 195, 195);
+}
+
+#CardProductID_Images{
+    width: 100%;
+    height: 100%;
+}
+#CardProductsID_PriceContainer{
+    margin-top: 1.8%;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bolder;
+    color: rgb(67, 65, 65);
+    border-radius: 2%;
+    border: 1px solid rgb(225, 222, 222);
+    width: 26%;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    margin-left: 5%;
+    height: 45%;
+    margin-bottom: 0;
+}
+
+#CardProductsID_FinalPrice{
+    margin-top: 10%;
+    margin-bottom: 0;
+    width: 65%;
+    margin-left: 7%;
+    font-size: 30px;
+color: rgb(0, 0, 0);
+}
+
+#CardProductID_Name{
+    color: rgb(130, 128, 128);
+    padding-left: 20px;
+    padding-top: 10px;
+}
+#CardProductID_Price{
+    color: rgb(53, 53, 53);
+    padding-top: 10px;
+    padding-left: 20px;
+    font-weight: bolder;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 35px;
+}
+#CardProductID_PriceOffert{
+    padding-left: 17px;
+    color: rgb(27, 192, 27);
+    padding-top: 20px;
+    font-weight: bolder;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+}
+#CardProductID_PriceInInstallments{
+    color: rgb(38, 37, 37);
+    padding-left: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+#CardProductID_FreeShip{
+    color: rgb(29, 174, 29);
+    font-weight: bold;
+    padding-left: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+#CardProductID_pReserve{
+    margin-top: 15px;
+    color: rgb(116, 115, 115);
+    padding-left: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+#CardProductID_Link{
+    text-decoration: none;
+    width: 224px;
+}
+
+#CardProductsID_Submit{
+    margin-left: 5%;
+    width: 120px;
+    height: 40px;
+    border-radius: 7%;
+    border: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: #3483FA;
+}
+
+#CardProductsID_Reserve{
+    width: 120px;
+    height: 40px;
+    border-radius: 7%;
+    margin-left: 2%;
+    border: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-size: 18px;
+    background-color: #3483FA;
+}

@@ -1,7 +1,6 @@
 import React from 'react'
-import {useState,useEffect} from 'react'
 import './cardProducts.css'
-import ImagenPrueba from '../imagenesprueba/fotoprueba.png'
+import ImagenPrueba from '../../../mainComponents/ProductSections/cars/images/volkswagen.jpg'
 
 
 const  CardProducts = ({price, name }) => {

@@ -36,7 +36,7 @@ const ProductSchema = Schema({
    subCategory:{
     type:String,
     required:true,
-    enum:['Pets','Food and Drink','Babys','Health and healthy equipment','Marolio','Arcor','Serenisima','Nestle','Car','Motorbike','Bike','T-Shirt','Shoes','Jacket','Jeans','','Sony','Lenovo','Asus','Hp']
+    enum:['Pets','Food and Drink','Babys','Tablet','Notebook','Cellphone','Candies','Health and healthy equipment','Marolio','Arcor','Serenisima','Nestle','Car','Motorbike','Bike','T-Shirt','Shoes','Jacket','Jeans','','Sony','Lenovo','Asus','Hp']
    }
 })
 

@@ -1,9 +1,9 @@
 import React from 'react'
-import './CardsSupermarket.css'
-import ImagenPrueba from '../images/Almacen.jpg'
+import './TechnologyProducts.css'
+import ImagenPrueba from '../images/cellphone.jpeg'
 
 
-const  CardsSupermarket = ({price, name }) => {
+const  TechnologyProducts = ({price, name }) => {
   let PriceDivisor = price / 6
   
   //PRICE rounded 
@@ -32,4 +32,4 @@ const  CardsSupermarket = ({price, name }) => {
   )
 }
 //224 x 340
-export default CardsSupermarket
+export default TechnologyProducts

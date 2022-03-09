@@ -15,7 +15,8 @@ const CarsSections = () => {
             }
         }).then(respJson => {
            let carsProducts=  respJson.msg.filter(item => item.category === 'cars')
-          setProducts(carsProducts)
+           let carsProductsSlice =  carsProducts.slice(0,5)
+          setProducts(carsProductsSlice)
         })
     }, [])
 

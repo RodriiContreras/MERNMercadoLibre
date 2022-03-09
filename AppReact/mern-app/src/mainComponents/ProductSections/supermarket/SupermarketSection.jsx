@@ -1,7 +1,9 @@
 import React,{useState,useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import CarrouselHome from '../../../components/carrouselHome/CarrouselHome'
 import Navbar from '../../../components/navbar/Navbar'
 import CardsSupermarket from './CardsSupermarket/CardsSupermarket'
+import SupermarketCategories from './SupermarketCategories/SupermarketCategories'
 
 const  SupermarketSection =() => {
 
@@ -14,7 +16,8 @@ const  SupermarketSection =() => {
             }
         }).then(respJson => {
            let supermarketProducts = respJson.msg.filter(item => item.category === 'supermarket')
-          setProducts(supermarketProducts)
+           let ProductFilter = supermarketProducts.slice(0,5)
+          setProducts(ProductFilter)
         })
     }, [])
 
@@ -23,6 +26,7 @@ const  SupermarketSection =() => {
     <>
     <Navbar/>
     <CarrouselHome/>
+    <SupermarketCategories/>
 
 
     <div id='Products_CarsContainer'>

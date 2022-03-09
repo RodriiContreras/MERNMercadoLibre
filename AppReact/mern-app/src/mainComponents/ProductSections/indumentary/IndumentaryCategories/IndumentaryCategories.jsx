@@ -12,7 +12,7 @@ const IndumentaryCategories = () => {
     <>
     <div id='CarsCategories_CardContentFlex'>
 
-<Link className='CarsCategories_Link' to='/buy-products/indumentary/T-shirts'>
+<Link className='CarsCategories_Link' to='/buy-products/indumentary/T-Shirt'>
 <div className='CarsCategories_CardBorders'>
     <div className='CarsCategories_CardContent'>
      <img id='CarsCategories_TshirtLogo'src={Tshirt}/>
@@ -22,7 +22,7 @@ const IndumentaryCategories = () => {
  </div>
  </Link>
 
-<Link className='CarsCategories_Link' to='/buy-products/indumentary/Jackets'>
+<Link className='CarsCategories_Link' to='/buy-products/indumentary/Jacket'>
 <div className='CarsCategories_CardBorders'>
     <div className='CarsCategories_CardContent'>
     <img id='CarsCategories_JacketsLogo'src={Jackets}/>

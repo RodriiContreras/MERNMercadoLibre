@@ -84,10 +84,9 @@ const optionsCarsSubCategory = [
 ]
 
 const optionsTechnologySubCategory = [
-  { value: 'Sony', label: 'Sony' },
-  { value: 'Lenovo', label: 'Lenovo' },
-  { value: 'Asus', label: 'Asus'},
-  { value: 'Hp', label: 'Hp'},
+  { value: 'Tablet', label: 'Tablet' },
+  { value: 'Notebook', label: 'Notebook' },
+  { value: 'Cellphone', label: 'Cellphone'},
   { value: '', label: 'Other' }
 ]
 

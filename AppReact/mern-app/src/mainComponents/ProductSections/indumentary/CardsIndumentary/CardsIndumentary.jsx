@@ -1,6 +1,6 @@
 import React from 'react'
 import './CardsIndumentary.css'
-import ImagenPrueba from '../../cars/images/volkswagen.jpg'
+import ImagenPrueba from '../images/Shoes.jpeg'
 
 
 const  CardsIndumentary = ({price, name }) => {

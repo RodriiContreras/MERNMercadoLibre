@@ -8,6 +8,7 @@ import IndumentaryCategories from './IndumentaryCategories/IndumentaryCategories
 
 const IndumentarySection = () => {
     const [products, setProducts] = useState([])
+
      console.log(products)
     useEffect(() => {
         fetch('/product/buy-products').then(res =>{
@@ -16,7 +17,8 @@ const IndumentarySection = () => {
             }
         }).then(respJson => {
            let indumentaryProducts = respJson.msg.filter(item => item.category === 'indumentary')
-          setProducts(indumentaryProducts)
+            let arraySlice = indumentaryProducts.slice(0,5)
+          setProducts(arraySlice)
         })
     }, [])
 
