@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom';
 import Navbar from '../../../../components/navbar/Navbar';
 import ImagenPrueba from '../images/notebook.jpg'
+import Loading from '../../../../components/loading/loader.gif'
 
 
 const TechnologyCategory =() => {
@@ -23,13 +24,24 @@ const TechnologyCategory =() => {
             setProducts(ProductFilter)
         })
         .finally(() => {
-            setLoading(false);
+          setTimeout(() => {
+            setLoading(false);                   
+          }, 2000);
           });
     }, [])
 
+    
     if (loading) {
-        return <p>Data is loading...</p>;
-      }
+      return(
+        <div>
+      <Navbar/>
+      <div id='Loading_Content'>
+      <img id='Loading_Style' src={Loading}/>
+      </div>
+      </div>
+    )
+    }
+    
     
  
   return(

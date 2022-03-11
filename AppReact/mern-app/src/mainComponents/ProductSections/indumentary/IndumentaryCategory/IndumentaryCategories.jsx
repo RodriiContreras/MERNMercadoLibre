@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom';
 import Navbar from '../../../../components/navbar/Navbar';
 import ImagenPrueba from '../images/Jackets.jpg'
+import Loading from '../../../../components/loading/loader.gif'
 
 
 const IndumentaryCategories =() => {
@@ -23,13 +24,24 @@ const IndumentaryCategories =() => {
             setProducts(ProductFilter)
         })
         .finally(() => {
+          setTimeout(() => {
             setLoading(false);
+          }, 2000);
           });
+        
     }, [])
 
+   
     if (loading) {
-        return <p>Data is loading...</p>;
-      }
+      return(
+        <div>
+      <Navbar/>
+      <div id='Loading_Content'>
+      <img id='Loading_Style' src={Loading}/>
+      </div>
+      </div>
+    )
+    }
     
  
   return(

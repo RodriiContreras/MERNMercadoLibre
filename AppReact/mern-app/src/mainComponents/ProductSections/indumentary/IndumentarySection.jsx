@@ -32,7 +32,7 @@ const IndumentarySection = () => {
 
     <div id='Products_CarsContainer'>
      {products.map(items => (
-        <CardsIndumentary key={items.id} price={items.price} stock={items.stock} name={items.name}/>
+        <CardsIndumentary id={items._id}  key={items._id} price={items.price} stock={items.stock} name={items.name}/>
     ))}  
    </div>
     </>

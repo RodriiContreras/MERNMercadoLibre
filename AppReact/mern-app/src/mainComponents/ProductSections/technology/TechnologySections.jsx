@@ -32,7 +32,7 @@ const TechnologySections = () => {
 
    <div id='Products_CarsContainer'>
     {products.map(items => (
-        <TechnologyProducts key={items.id} price={items.price} stock={items.stock} name={items.name}/>
+        <TechnologyProducts id={items._id} key={items._id} price={items.price} stock={items.stock} name={items.name}/>
     ))} 
    </div>
    </>

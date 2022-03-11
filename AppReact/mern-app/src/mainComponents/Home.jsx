@@ -7,17 +7,6 @@ import ProductosHome from '../components/productosHome/ProductosHome'
 
 const Home = () => {
 
-  const [productos, setproductos] = useState([])
-  useEffect(() => {
-      fetch('/product/buy-products').then(res =>{
-          if(res.ok){
-              return res.json()
-          }
-      }).then(respJson =>{
-          const almacenador = respJson.msg.slice(0,5)
-           setproductos(almacenador)
-      })
-  }, [])
 
   return (
    <>

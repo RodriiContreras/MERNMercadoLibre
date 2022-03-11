@@ -1,9 +1,10 @@
 import React from 'react'
 import './CardsSupermarket.css'
 import ImagenPrueba from '../images/Almacen.jpg'
+import { Link } from 'react-router-dom'
 
 
-const  CardsSupermarket = ({price, name }) => {
+const  CardsSupermarket = ({id,price, name }) => {
   let PriceDivisor = price / 6
   
   //PRICE rounded 
@@ -16,7 +17,7 @@ const  CardsSupermarket = ({price, name }) => {
   return (
     <>
     <div id='CardProduct_Container'>
-    <a href=''id='CardProduct_Link'>
+    <Link href=''id='CardProduct_Link' to={`/product/buy-product/${id}`}>
         <div id='CardProduct_ImagesContainer'><img src={ImagenPrueba} id='CardProduct_Images' alt='Product Image'/></div>
         <div id='CardProducts_PriceContainer'>
           <p id='CardProducts_FinalPrice'>${price}</p>
@@ -26,7 +27,7 @@ const  CardsSupermarket = ({price, name }) => {
         <p id='CardProduct_PriceInInstallments'>Pay it in 6 x ${PriceRounded}</p>
         <p id='CardProduct_FreeShip'>Free Shipping!</p>
         <p id='CardProduct_Name'>{name}</p>
-        </a>
+        </Link>
     </div>
     </>
   )

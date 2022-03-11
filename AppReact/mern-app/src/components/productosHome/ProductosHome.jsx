@@ -23,7 +23,7 @@ const ProductosHome = () => {
    <h2 id='h2_productosHome'>Some of our Products</h2>
    <div id='CardProducts_ContainerFlex'>
     {productos.map(items => (
-        <CardProducts key={items.id} price={items.price} stock={items.stock} name={items.name}/>
+        <CardProducts id={items._id} key={items._id} price={items.price} stock={items.stock} name={items.name}/>
     ))}
    </div>
 

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Navbar from '../../../../components/navbar/Navbar'
 import { Link } from 'react-router-dom'
 import ImagenPrueba from '../images/Almacen.jpg'
+import Loading from '../../../../components/loading/loader.gif'
 
 
 const SupermarketCategory = () => {
@@ -24,13 +25,23 @@ const SupermarketCategory = () => {
             setProducts(productFilter)
         })
         .finally(() => {
+            setTimeout(() => {
             setLoading(false);
+        }, 2000);
           });
     }, [])
 
     if (loading) {
-        return <p>Data is loading...</p>;
+        return(
+          <div>
+        <Navbar/>
+        <div id='Loading_Content'>
+        <img id='Loading_Style' src={Loading}/>
+        </div>
+        </div>
+      )
       }
+      
     
 
   return (

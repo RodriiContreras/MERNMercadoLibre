@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import Navbar from '../../../../components/navbar/Navbar'
 import './CarsBrands.css'
 import ImagenPrueba from '../images/volkswagen.jpg'
+import Loading from '../../../../components/loading/loader.gif'
 
 const CarsBrands =  () => {
     const {brand} = useParams()
@@ -21,12 +22,23 @@ const CarsBrands =  () => {
             setProducts(respJson)
         })
         .finally(() => {
+          setTimeout(() => {
+      
             setLoading(false);
+          }, 2000);
           });
     }, [])
 
+
     if (loading) {
-        return <p>Data is loading...</p>;
+        return(
+          <div>
+        <Navbar/>
+        <div id='Loading_Content'>
+        <img id='Loading_Style' src={Loading}/>
+        </div>
+        </div>
+      )
       }
     
     
