@@ -2,11 +2,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCar ,faShirt,faCartShopping,faMicrochip} from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import './SubNavbar.css'
-import { Link , useParams } from 'react-router-dom'
+import { Link  } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../../../Context/AuthContext'
+import SellProductsAuth from './SellProducts-Authenticate/SellProductsAuth'
 const SubNavbar = () => {
+  const {dataAuth , setDataAuth} = useContext(AuthContext)
+  console.log(dataAuth)
 
   return (
-    <div id='SubNavbar_BackgroundContent'>
+    <>
+
+
+  {dataAuth.length > 0 ?  <div id='SubNavbar_BackgroundContent'>
         <h1 id='SubNavbar_h1'>¡Hi! Antes que nada contanos , ¿qué vas a publicar?</h1>
 
 
@@ -50,7 +58,9 @@ const SubNavbar = () => {
        </div>
        </Link>
      </div>
-    </div>
+    </div> : <SellProductsAuth/>}
+   
+    </>
   )
 }
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import FordLogo from './images/ford.png'
-import ChevroletLogo from './images/chevrolet.png'
-import RenaultLogo from './images/renaul.png'
-import VolkswagenLogo from './images/volkswagen.png'
+import FordLogo from './images/ford.jpg'
+import ChevroletLogo from './images/chevrolet.jpg'
+import RenaultLogo from './images/renault.jpg'
+import VolkswagenLogo from './images/Volkswagen1.jpg'
 
 const CarsCategories = () =>{
   return (

@@ -40,17 +40,17 @@
 }
 
 #CarsCategories_FordLogo{
-    margin-top: 20px;
     width: 200px;
+    height: 130px;
 }
 #CarsCategories_ChevroletLogo{
     width: 200px;
+    height: 130px;
 }
 #CarsCategories_RenaultLogo{
     width: 200px;
+    height: 130px;
 }
 #CarsCategories_VolkswagenLogo{
-    position: relative;
-    left: 17%;
-    width: 130px;
+    width: 200px;
 }

@@ -1,14 +1,37 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import SellProductsNavbar from '../SellProducts-navbar/SellProductsNavbar'
 import {Form,Formik, Field} from 'formik'
 import * as Yup from 'yup'
 import './MainForm.css'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../../../Context/AuthContext'
+
 
 const MainForm = () => {
     const {category} = useParams()
     const [booleanLink, setbooleanLink] = useState(false)
+    const {logData} = useContext(AuthContext)
+    const [UserDataID, setUserDataID] = useState()
+    console.log(UserDataID)
+    let stringifyLogData = JSON.stringify(logData)
+    useEffect(() => {
+      fetch("http://localhost:8080/auth/Get-UserByEmail",{
+        method:'POST',
+        mode:'cors',
+        headers:{
+          'Content-Type':'Application/json'
+        },
+        body:stringifyLogData})
+        .then(resp => resp.json())
+        .then(resp =>{
+          setUserDataID(resp)
+        })
+      .catch(err => console.log(err))
+
+     },[])
+    
 
    const SubmitCreateProduct = (stringifyValues) =>{
     fetch("http://localhost:8080/product/sell-Products" ,{
@@ -25,6 +48,12 @@ const MainForm = () => {
       })
     .catch(err => console.log(err))
    }
+   
+   if(!UserDataID){
+    return ''
+  }
+
+
 
 
    
@@ -128,7 +157,7 @@ const optionsTechnologySubCategory = [
                 stock:'',
                 price:'',
                 brand:'',
-                user:'62164e387658b8f09f9c36d8',
+                user:UserDataID.msg._id,
                 subCategory:'',
               }}
               validationSchema={schemaValidation}

@@ -7,14 +7,13 @@ import { useContext } from 'react'
 import { AuthContext } from '../../../Context/AuthContext'
 
 const FormFormikLogin = () => {
-    const [booleanPath, setBooleanPath] = useState(false)
     const {setDataAuth} = useContext(AuthContext)
     const [errorMessage, setErrorMessage] = useState()
     const [MessageSucess, setMessageSucess] = useState()
-
+    const {logData,setLogData} = useContext(AuthContext)
 
     
-
+    console.log(logData)
 
     const LoginSubmit = (stringify)=>{
     fetch('http://localhost:8080/auth/Login',{
@@ -43,6 +42,7 @@ const FormFormikLogin = () => {
         }
     })
     .catch(error=> console.log(error))
+
     }
     
     const validationSchema = Yup.object({
@@ -63,6 +63,7 @@ const FormFormikLogin = () => {
               validationSchema={validationSchema}
               onSubmit={async (values) => {
                   let stringify = JSON.stringify(values)
+                  setLogData(values)
                   LoginSubmit(stringify)
               }}
             >

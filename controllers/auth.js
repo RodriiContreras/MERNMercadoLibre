@@ -5,6 +5,21 @@ const { generateToken } = require('../helpers/jwt');
 
 
 
+const userGetById = async (req,res=response)=>{
+ const {email} = req.body
+
+ const userExists = await User.findOne({email})
+ if(!userExists){
+  return res.status(400).json({
+    msg:'El Email no esta asociado en una cuenta en nuestra Base de Datos'
+  })
+}
+
+res.json({
+  msg:userExists
+})
+ 
+}
 const userRegister =  async(req,res=response)=>{
   const {name,email,password,dni,cellphone} = req.body
   console.log(req.body)
@@ -53,5 +68,6 @@ res.json({
 
 module.exports={
 userRegister,
-userLogin
+userLogin,
+userGetById
 }

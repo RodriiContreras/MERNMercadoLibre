@@ -1,0 +1,11 @@
+#Auth_Container{
+    position: relative;
+    left: 29%;
+    top: 280px;
+}
+#Auth_LinkToLogin{
+margin-left: 250px
+}
+#Auth_LinkToRegister{
+    margin-left: 30px;
+}

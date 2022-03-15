@@ -41,7 +41,7 @@ const Navbar =() => {
           </li>
           <li class='landing_subItem'><Link className='landing_subItemLink' to='/buy-products/supermarket'>Supermarket</Link></li>
           <li class='landing_subItem'><Link className='landing_subItemLink' to='/buy-products/indumentary'>Indumentary</Link></li>
-          <li class='landing_subItem'><Link className='landing_subItemLink' to=''>History</Link></li>
+          <li class='landing_subItem'><Link className='landing_subItemLink' to='/history'>History</Link></li>
           <li class='landing_subItem'><Link className='landing_subItemLink' to='/product/sell-Products'>Sell</Link></li>
           <li class='landing_subItem'><Link className='landing_subItemLink' to='/help'>Help</Link></li>
         </ul>

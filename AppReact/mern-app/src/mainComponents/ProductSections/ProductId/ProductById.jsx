@@ -5,10 +5,13 @@ import ImagenPrueba from '../cars/images/volkswagen.jpg'
 import './ProductById.css'
 import Loading from '../../../components/loading/loader.gif'
 import Swal from 'sweetalert2'
+import { useContext } from 'react'
+import { AuthContext } from '../../../components/Context/AuthContext'
 
 
 const ProductById = () => {
     const [productos, setproductos] = useState([])
+    const {productsHistory,setProductsHistory} = useContext(AuthContext)
     const [loading, setLoading] = useState(true);
     const {id} = useParams()
     console.log(productos)
@@ -18,8 +21,8 @@ const ProductById = () => {
                 return res.json()
             }
         }).then(respJson =>{
-console.log(respJson)
              setproductos(respJson)
+             setProductsHistory([...productsHistory,respJson])
         })
         .finally(() => {
           setTimeout(() => {

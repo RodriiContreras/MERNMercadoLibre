@@ -5,6 +5,7 @@ import Login from "./components/auth/loginComponent/Login";
 import Register from "./components/auth/loginComponents/registerComponents/Register";
 import AuthContextProvider from "./components/Context/AuthContext";
 import Help from "./components/help/Help";
+import History from "./components/History/History";
 import SellProducts from "./components/ProductsCategoriesComponents/Sell-Products/SellProducts";
 import MainForm from "./components/ProductsCategoriesComponents/Sell-Products/SellProductsCategory/MainForm";
 import Home from './mainComponents/Home';
@@ -46,7 +47,7 @@ function App() {
    <Route exact path={`/product/buy-product/:id`}  element={<ProductById/>}/>
 
 
-
+   <Route exact path='/history'  element={<History/>}/>
 
    <Route exact path='/auth/Register'  element={<Register/>}/>
    <Route exact path='/auth/Login'  element={<Login/>}/>
