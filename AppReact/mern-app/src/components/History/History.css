@@ -6,12 +6,12 @@
 
 #History_ProductsHistory{
     display: flex;
+    flex-wrap: wrap;
     width: 56%;
     margin-left: 19%;
     padding-top: 30PX;
     height: auto;
 }
-
 #History_ProductWithoutHistory{
     width: 1100px;
     text-align: center;

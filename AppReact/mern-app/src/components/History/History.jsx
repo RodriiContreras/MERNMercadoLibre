@@ -9,7 +9,7 @@ import './History.css'
 
 function History() {
     const {productsHistory} = useContext(AuthContext)
-    const {dataAuth , setDataAuth} = useContext(AuthContext)
+    const {dataAuth} = useContext(AuthContext)
     console.log(productsHistory)
   
 

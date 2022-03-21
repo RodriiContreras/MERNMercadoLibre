@@ -4,6 +4,23 @@ const { createProduct, deleteProducts, updateProduct, getProducts, getProductsBy
  const { validation } = require('../middlewares/camposValidados');
 const { categoryExistsValidation, userExistsValidation } = require('../helpers/products-validations');
 
+
+// const multer = require('multer')
+// const sharp = require('sharp')
+
+// const storage = multer.diskStorage({
+//    destination:(req,file,cb) =>{
+//       cb(null,'../assets/uploads')
+//    },
+//    filename:(req,file,cb)=>{
+//       const ext = file.originalname.split('.').pop()
+//      cb(null,`${Date.now()}.${ext}`)
+//    }
+// })
+
+// const upload = multer({storage})
+
+
 const router = Router();
 
  router.get('/buy-products',[

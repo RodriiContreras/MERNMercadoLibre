@@ -67,12 +67,6 @@ const ProductById = () => {
       let PriceOfPercent = 68 * PriceRounded / 100
 
       console.log(PriceOfPercent)
-      // //PRICE rounded 
-      // let PriceRounded = Math.round(PriceDivisor)
-    
-      // // Price Of Percent 
-      // let  PriceOfPercent = 68 * price / 100
-    
   return (
     <>
     <Navbar/>
@@ -96,10 +90,22 @@ const ProductById = () => {
         <p id='CardProductID_pReserve'>You a problem with this post ?</p>
         <p id='CardProductID_FreeShip'>Free Shipping!</p>
         </div>
+        <div id='CardProductID_UserConten'>
+        <p id='CardProductID_Title'>Conditions and special services</p>
+        <div id='CardProductID_ContentFlex'>
+          <p>Ace</p>
+          <p></p>
+          <p></p>
+        </div>
+        </div>
 
+        <div id='CardProductID_UserContent'>
+          <p id='CardProductID_UserContentP'>User information</p>
+          <p id='CardProductID_UserContentUserName'>Nombre del usuario</p>
+          <p id='CardProductID_UserContentUserName'>Cellphone</p>
+          <p id='CardProductID_UserContentUserName'>Horario de atencion</p>
+        </div>
 
-
-  
     </div>
    :''} 
    </div>
