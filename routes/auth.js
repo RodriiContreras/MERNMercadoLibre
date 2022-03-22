@@ -1,6 +1,6 @@
 const {Router} = require('express')
 const {check} = require('express-validator');
-const { userRegister,userLogin,userGetById } = require('../controllers/auth');
+const { userRegister,userLogin,userGetByEmail,userGetById } = require('../controllers/auth');
 const { emailExists,dniExists,cellphoneExists,loginEmailNoExists } = require('../helpers/validation');
 const { validation } = require('../middlewares/camposValidados');
 
@@ -8,7 +8,7 @@ const { validation } = require('../middlewares/camposValidados');
 
 const router = Router();
 
-router.post('/Get-UserByEmail',[],userGetById)
+router.post('/Get-UserByEmail',[],userGetByEmail)
 
 //esta ruta recibe email - name - password - cellphone - dni -lastname 
 router.post('/Register', [
@@ -30,6 +30,12 @@ router.post('/Login',[
     check('password','Password required').not().isEmpty(),
     validation
 ],userLogin)
+
+
+
+router.get('/Get-UserById/:id',[],userGetById)
+
+
 
 
 

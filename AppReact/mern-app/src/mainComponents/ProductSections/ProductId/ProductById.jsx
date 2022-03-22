@@ -7,20 +7,30 @@ import Loading from '../../../components/loading/loader.gif'
 import Swal from 'sweetalert2'
 import { useContext } from 'react'
 import { AuthContext } from '../../../components/Context/AuthContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser,faCalendar} from '@fortawesome/free-regular-svg-icons'
+import {faPhone} from '@fortawesome/free-solid-svg-icons'
 
 
 const ProductById = () => {
     const [productos, setproductos] = useState([])
     const {productsHistory,setProductsHistory} = useContext(AuthContext)
     const [loading, setLoading] = useState(true);
+    const {dataAuth} = useContext(AuthContext)
+    console.log(dataAuth)
+     const [userDataID, setUserDataID] = useState()
+    const [userData, setUserData] = useState()
+
     const {id} = useParams()
-    console.log(productos)
+
     useEffect(() => {
         fetch(`/product/buy-product/${id}`).then(res =>{
             if(res.ok){
                 return res.json()
             }
         }).then(respJson =>{
+             const {user} = respJson.msg;
+             setUserDataID(user)
              setproductos(respJson)
              setProductsHistory([...productsHistory,respJson])
         })
@@ -29,7 +39,25 @@ const ProductById = () => {
             setLoading(false);
           }, 1000);
           });
+
+          fetch(`http://localhost:8080/auth/Get-UserById/${userDataID}`).then(res =>{
+            console.log(res)
+            if(res.ok){
+              return res.json()
+            }
+          }).then(respJson =>{
+            setUserData(respJson.msg)
+          })
+
+
+        
+
+
+      
     }, [])
+
+
+
 
     if (loading) {
       return(
@@ -43,21 +71,41 @@ const ProductById = () => {
     }
 
     const submitButton = ()=>{
-      Swal.fire({
-        title: 'Good Buy!',
-        text: 'Buy successful',
-        icon: 'success',
-        confirmButtonText: 'Ok!'
-      })
+      if(dataAuth.length < 1){
+        Swal.fire({
+          title: 'You have to Login!',
+          text: 'Log In',
+          icon: 'warning',
+          confirmButtonText: 'Ok!'
+        })
+      }
+      else{
+        Swal.fire({
+          title: 'Good Buy!',
+          text: 'Buy successful',
+          icon: 'success',
+          confirmButtonText: 'Ok!'
+        })
+      }
     }
     
     const reserveButton = ()=>{
-      Swal.fire({
-        title: 'Good Reserve!',
-        text: 'Reserve successful',
-        icon: 'success',
-        confirmButtonText: 'Ok!'
-      })
+      if(dataAuth.length < 1){
+        Swal.fire({
+          title: 'You have to Login!',
+          text: 'Log In',
+          icon: 'warning',
+          confirmButtonText: 'Ok!'
+        })
+      }
+      else{
+        Swal.fire({
+          title: 'Good Reserve!',
+          text: 'Reserve successful',
+          icon: 'success',
+          confirmButtonText: 'Ok!'
+        })
+      }
     }
 
       let PriceDivisor = productos.msg.price
@@ -66,7 +114,6 @@ const ProductById = () => {
 
       let PriceOfPercent = 68 * PriceRounded / 100
 
-      console.log(PriceOfPercent)
   return (
     <>
     <Navbar/>
@@ -91,19 +138,19 @@ const ProductById = () => {
         <p id='CardProductID_FreeShip'>Free Shipping!</p>
         </div>
         <div id='CardProductID_UserConten'>
-        <p id='CardProductID_Title'>Conditions and special services</p>
+        <p id='CardProductID_Title'>Other Products</p>
         <div id='CardProductID_ContentFlex'>
-          <p>Ace</p>
-          <p></p>
-          <p></p>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
         </div>
 
         <div id='CardProductID_UserContent'>
           <p id='CardProductID_UserContentP'>User information</p>
-          <p id='CardProductID_UserContentUserName'>Nombre del usuario</p>
-          <p id='CardProductID_UserContentUserName'>Cellphone</p>
-          <p id='CardProductID_UserContentUserName'>Horario de atencion</p>
+          <p id='CardProductID_UserContentUserName'><FontAwesomeIcon style={{'color':'blue'}} icon={faUser}/>   {userData.name} {userData.lastname}</p>
+          <p id='CardProductID_UserContentUserName'><FontAwesomeIcon style={{'color':'blue'}} icon={faPhone}/>  {userData.cellphone} </p>
+          <p id='CardProductID_UserContentUserName'><FontAwesomeIcon style={{'color':'blue'}} icon={faCalendar}/> Monday to Friday 9:00hs - 18:00hs</p>
         </div>
 
     </div>
