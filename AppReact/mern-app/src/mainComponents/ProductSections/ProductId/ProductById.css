@@ -183,4 +183,9 @@ color: rgb(0, 0, 0);
 
 #CardProductID_ContentFlex{
     display: flex;
+    justify-content: start;
+    position: relative;
+    left: 16%;
+    width: 81%;
+    height: 70%;
 }

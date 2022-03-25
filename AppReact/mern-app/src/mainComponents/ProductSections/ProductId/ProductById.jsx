@@ -10,6 +10,7 @@ import { AuthContext } from '../../../components/Context/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faCalendar} from '@fortawesome/free-regular-svg-icons'
 import {faPhone} from '@fortawesome/free-solid-svg-icons'
+import SubProducts from './subProducts/SubProducts'
 
 
 const ProductById = () => {
@@ -17,13 +18,19 @@ const ProductById = () => {
     const {productsHistory,setProductsHistory} = useContext(AuthContext)
     const [loading, setLoading] = useState(true);
     const {dataAuth} = useContext(AuthContext)
-    console.log(dataAuth)
-     const [userDataID, setUserDataID] = useState()
+    const [userDataID, setUserDataID] = useState()
     const [userData, setUserData] = useState()
+
+    const [subProducts, setSubProducts] = useState([])
+
+    console.log(subProducts)
+
+
 
     const {id} = useParams()
 
     useEffect(() => {
+
         fetch(`/product/buy-product/${id}`).then(res =>{
             if(res.ok){
                 return res.json()
@@ -41,7 +48,7 @@ const ProductById = () => {
           });
 
           fetch(`http://localhost:8080/auth/Get-UserById/${userDataID}`).then(res =>{
-            console.log(res)
+
             if(res.ok){
               return res.json()
             }
@@ -50,11 +57,18 @@ const ProductById = () => {
           })
 
 
-        
-
-
+          fetch(`http://localhost:8080/product/buy-products`).then(res =>{
+            console.log(res)
+            if(res.ok){
+              return res.json()
+            }
+          }).then(respJson =>{
+             let sliceResp = respJson.msg.slice(0,3)
+             setSubProducts(sliceResp)
+          })
+ 
       
-    }, [])
+    }, [id])
 
 
 
@@ -140,9 +154,11 @@ const ProductById = () => {
         <div id='CardProductID_UserConten'>
         <p id='CardProductID_Title'>Other Products</p>
         <div id='CardProductID_ContentFlex'>
-          <div></div>
-          <div></div>
-          <div></div>
+           {subProducts.map(item=>(
+            <SubProducts id={item._id} price={item.price} name={item.name} />
+          ))
+
+          } 
         </div>
         </div>
 

@@ -1,0 +1,60 @@
+#SubCardProduct_Container{
+    width: 174px;
+    height: 220px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: block;
+}
+
+#SubCardProduct_Container:hover{
+    height: 240px;
+    transition: .2s;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+
+#SubCardProduct_Container:hover #SubCardProduct_Link #SubCardProduct_Price{
+    transition: .5s;  
+    padding-top: 25px;
+}
+#SubCardProduct_Container:hover #SubCardProduct_Link #SubCardProduct_PriceOffert{
+    transition: .5s;  
+    padding-top: 35px;
+}
+#SubCardProduct_Container:hover #SubCardProduct_Link #SubCardProduct_PriceInInstallments{
+    transition: .5s;  
+    padding-top: 12px;
+}
+
+#SubCardProduct_ImagesContainer{
+    border-bottom: 1px solid rgb(196, 195, 195);
+}
+
+#SubCardProduct_Images{
+    width: 150px;
+    height: 150px;
+
+}
+#SubCardProducts_PriceContainer{
+    display: flex;
+    height: 35px;
+    margin-bottom: 0;
+}
+#CardProducts_FinalPrice{
+    visibility: hidden;
+    font-size: 17px;
+    text-decoration: line-through;
+    position: absolute;
+padding-left: 25px;
+margin-bottom: 0;
+color: rgb(133, 131, 131);
+}
+#SubCardProduct_Name{
+    color: rgb(130, 128, 128);
+}
+
+#SubCardProduct_Link{
+    color: black;
+    text-decoration: none;
+    width: 224px;
+}
