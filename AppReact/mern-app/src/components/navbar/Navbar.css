@@ -13,6 +13,7 @@
     left: 19%;
 }
 #searchbox_container{
+    display: flex;
     background-color: white;
     border-radius: 2%;
     width: 620px;
@@ -25,6 +26,7 @@
 #searchbox_button{
     color: gray;
     margin-left: 12px;
+    margin-top: 10px;
     z-index: +5;
 }
 #searchbox_navbar{

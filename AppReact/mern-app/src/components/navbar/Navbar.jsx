@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './Navbar.css'
 import meliLatam from './images/meliLatam.png'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -6,8 +6,31 @@ import {faMagnifyingGlass,faCartArrowDown,faLocationPin,faArrowDown} from '@fort
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../Context/AuthContext'
-const Navbar =() => {
+import Select from 'react-select'
 
+const Navbar =() => {
+  const [products, setProducts] = useState([])
+  const [productId, setproductId] = useState()
+  console.log(productId)
+
+   useEffect(() => {
+
+    fetch(`http://localhost:8080/product/buy-products`).then(res =>{
+      if(res.ok){
+        return res.json()
+      }
+    }).then(respJson =>{
+      const options = respJson.msg.map( product=>(
+        {value:product._id , label:product.name}
+      ))
+      setProducts(options)
+    })
+
+   }, [])
+
+          
+
+   
   const {dataAuth , setDataAuth} = useContext(AuthContext)
   
     
@@ -21,8 +44,8 @@ const Navbar =() => {
 
 
       <div id='searchbox_container'>
-        <input id='searchbox_navbar' placeholder='Search Products,marks,and other...'/>
-        <Link to=''><FontAwesomeIcon id='searchbox_button' icon={faMagnifyingGlass} /></Link> 
+        <Select id='searchbox_navbar' onChange={(e)=>setproductId(e.value)} options={products}/>
+        <Link to={`/product/buy-product/${productId}`}><FontAwesomeIcon id='searchbox_button' icon={faMagnifyingGlass}/></Link> 
       </div>
 
         <ul id='landing_listContainer'>
