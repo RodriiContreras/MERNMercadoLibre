@@ -21,6 +21,8 @@ const ProductById = () => {
     const [userDataID, setUserDataID] = useState()
     const [userData, setUserData] = useState()
 
+    console.log(productos)
+
     const [subProducts, setSubProducts] = useState([])
 
     console.log(subProducts)
@@ -84,7 +86,7 @@ const ProductById = () => {
     )
     }
 
-    const submitButton = ()=>{
+    const submitButton = async ()=>{
       if(dataAuth.length < 1){
         Swal.fire({
           title: 'You have to Login!',
@@ -94,6 +96,27 @@ const ProductById = () => {
         })
       }
       else{
+        const {name,description,price,user} = productos.msg;
+       const orderArray=
+       {
+         order:[{name:name,description:description,price:price,user:user}],
+         total:price,
+         create:Date.now(),
+         state:'Pendiente'
+       }
+
+
+       const orderArrayStringify = await JSON.stringify(orderArray)
+      
+        fetch(`/order/add-order`,{
+          method:'POST',
+          mode:'cors',
+          headers: {
+            'Content-Type':'application/json'
+          },
+          body:orderArrayStringify
+        })
+
         Swal.fire({
           title: 'Good Buy!',
           text: 'Buy successful',
