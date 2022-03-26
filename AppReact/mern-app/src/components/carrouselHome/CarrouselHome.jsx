@@ -13,7 +13,6 @@ const CarrouselHome = () => {
     <img
       className="d-block w-100"
       src={Imagen1}
-      id='carousel_image1'
       alt="First slide"
     />
     <Carousel.Caption>
