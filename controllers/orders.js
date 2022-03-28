@@ -24,6 +24,15 @@ const getOrders = async (req,res=response)=>{
     res.json(data)
 }
 
+const getOrdersByUser = async (req,res=response)=>{
+     const {id} = req.params
+     console.log(req.params)
+    const data = await Order.find({user:id})
+    console.log(data)
+    res.json({msg:data})
+}
+
+
 
 
 
@@ -31,5 +40,6 @@ const getOrders = async (req,res=response)=>{
 
 module.exports = {
     addOrder,
-    getOrders
+    getOrders,
+    getOrdersByUser
 }

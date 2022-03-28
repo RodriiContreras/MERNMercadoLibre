@@ -3,26 +3,81 @@ import React from 'react'
 import Navbar from '../navbar/Navbar'
 import './OrderHome.css'
 import { Accordion } from 'react-bootstrap'
-
+import {useContext,useEffect} from 'react'
+import { useState } from 'react'
+import {AuthContext} from '../Context/AuthContext'
 const OrderHome =() => {
+  
+   const {logData,setLogData} = useContext(AuthContext)
+   const [id, setId] = useState()
+   const [order, setOrder] = useState()
+  console.log(id)
+
+  console.log(order)
+
+
+
+
+   useEffect(() => {
+    const stringify = JSON.stringify({email:logData.email})
+    console.log(stringify)
+    fetch('http://localhost:8080/auth/Get-UserByEmail',{
+      method:'POST',
+      mode:'cors',
+      headers:{
+      "Content-Type":"application/json"
+      },
+      body:stringify
+    }).then(resp =>{
+      if(resp.ok){
+        return resp.json()
+      }
+    })
+    .then(resp => setId(resp.msg._id))
+
+
+     
+      fetch(`http://localhost:8080/order/get-ordersByUserID/${id}`)
+      .then(resp =>{
+        console.log(resp)
+        if(resp.ok){
+          return resp.json()
+        }
+      })
+      .then(resp => setOrder(resp.msg))
+    
+    
+
+
+
+   }, [id])
+
+   if(!order) return 'no hay archivos'
+
+   
   return (
     <>
      <Navbar/>
      <div id='OrderHome_ContentOrder'>
-     <Accordion defaultActiveKey="0">
-  <Accordion.Item eventKey="0">
-    <Accordion.Header>Order</Accordion.Header>
-    <Accordion.Body>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </Accordion.Body>
-  </Accordion.Item>
-</Accordion>
+       { logData.length === undefined ?
+
+    order.map(item =>(
+    <Accordion defaultActiveKey="0">
+    <Accordion.Item eventKey="0">
+      <Accordion.Header>{item.order.map(subItem=>(<p>{subItem.name}  - <span style={{'color':'red'}}>{item.state}</span> </p>))}</Accordion.Header>
+      <Accordion.Body>
+        {item.order.map(items=>(
+          <div>
+          <p>{items.description}</p>
+          <p>Total price : ${items.price}</p>
+          </div>
+        ))}
+      </Accordion.Body>
+    </Accordion.Item>
+    </Accordion>
+
+  ))
+ : 'no hay nada'}
      </div>
     </>
   )

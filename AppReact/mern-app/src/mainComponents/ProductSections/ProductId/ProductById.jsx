@@ -21,11 +21,14 @@ const ProductById = () => {
     const [userDataID, setUserDataID] = useState()
     const [userData, setUserData] = useState()
 
-    console.log(productos)
+    const {logData} = useContext(AuthContext)
+
+    const [DataUserInLog, setDataUserInLog] = useState()
+
+
 
     const [subProducts, setSubProducts] = useState([])
 
-    console.log(subProducts)
 
 
 
@@ -57,6 +60,23 @@ const ProductById = () => {
           }).then(respJson =>{
             setUserData(respJson.msg)
           })
+
+      
+          const stringify = JSON.stringify({email:logData.email})
+          console.log(stringify)
+          fetch('http://localhost:8080/auth/Get-UserByEmail',{
+            method:'POST',
+            mode:'cors',
+            headers:{
+            "Content-Type":"application/json"
+            },
+            body:stringify
+          }).then(resp =>{
+            if(resp.ok){
+              return resp.json()
+            }})
+            .then(resp => setDataUserInLog(resp.msg._id))
+
 
 
           fetch(`http://localhost:8080/product/buy-products`).then(res =>{
@@ -96,10 +116,11 @@ const ProductById = () => {
         })
       }
       else{
-        const {name,description,price,user} = productos.msg;
+        const {name,description,price} = productos.msg;
        const orderArray=
        {
-         order:[{name:name,description:description,price:price,user:user}],
+         order:[{name:name,description:description,price:price}],
+         user:DataUserInLog,
          total:price,
          create:Date.now(),
          state:'Pendiente'

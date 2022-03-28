@@ -5,6 +5,10 @@ const OrderSchema = Schema({
         type:Array,
         required:true
     },
+    user:{
+        type:String,
+        required:true
+    },
     total:{
         type:Number,
         required:true
