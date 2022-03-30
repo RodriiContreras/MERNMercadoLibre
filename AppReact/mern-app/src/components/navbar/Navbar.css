@@ -181,7 +181,6 @@ margin-bottom: 15px;
 
 
 @media only screen and (max-width: 575px){
-
     #Meli_LogoContent{
         position: relative;
         left: 1%;
@@ -220,9 +219,9 @@ margin-bottom: 15px;
     #navbar_listAuth-Cart{
         margin-top: 70px;
         position: absolute;
-        left: 10%;
+        left: 0%;
         display: flex;
-        width: 500px;
+        width: 100%;
         border-style: none;
         text-decoration: none;
         list-style: none;

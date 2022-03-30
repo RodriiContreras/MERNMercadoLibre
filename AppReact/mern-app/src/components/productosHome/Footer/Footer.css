@@ -1,6 +1,6 @@
 #Footer_Container{
     width: 100%;
-    height: 100px;
+    height: auto;
     background-color: white;
 }
 
@@ -42,4 +42,15 @@
     width: 300PX;
     font-size: 13px;
     color: gray;
+}
+
+@media only screen and (max-width: 575px){
+    #Footer_ContainerFlex{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        position: relative;
+        left: 0%;
+        height: auto;
+    }
 }

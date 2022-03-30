@@ -166,3 +166,27 @@
     height: auto;
     background-color: white;
 }
+
+
+@media only screen and (max-width: 575px){
+    #Register_ImageLogo{
+        position: absolute;
+        width: 65%;
+        margin-top: 3%;
+        margin-left: 28%;
+        z-index: 400;
+    }
+    #Register_ImageLogoContainer{
+       position: absolute;
+       margin-top: 20px;
+       margin-left: 6%;
+        width: 200px;
+    }
+    #Register_H1{
+        position: absolute;
+        font-family: 'Source Sans Pro', sans-serif;
+        margin-left: 6%;
+        font-size: 34px;
+        margin-top: 30%;
+    }
+}

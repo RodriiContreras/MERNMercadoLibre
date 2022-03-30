@@ -121,11 +121,11 @@ const ProductById = () => {
        {
          order:[{name:name,description:description,price:68 * price / 100}],
          user:DataUserInLog,
-         total:68 * price / 100,
+         total:68 * price / 10,
          create:Date.now(),
          state:'Pendiente'
        }
-
+       
 
        const orderArrayStringify = await JSON.stringify(orderArray)
       
@@ -195,7 +195,7 @@ const ProductById = () => {
         <p id='CardProductID_pReserve'>You a problem with this post ?</p>
         <p id='CardProductID_FreeShip'>Free Shipping!</p>
         </div>
-        <div id='CardProductID_UserConten'>
+        <div id='CardProductID_UserContent'>
         <p id='CardProductID_Title'>Other Products</p>
         <div id='CardProductID_ContentFlex'>
            {subProducts.map(item=>(

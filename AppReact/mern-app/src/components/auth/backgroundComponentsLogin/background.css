@@ -28,3 +28,23 @@
     width: 80%;
     height: 100%;
 }
+
+@media only screen and (max-width: 575px){
+    #Register_ImageLogo{
+        width: 60px;
+        display: none;
+    }
+    #Register_Background{
+   display: none;
+    }
+    #Register_ImageLogoContainer{
+        position: absolute;
+        margin-top: 50px;
+        margin-left: 70px;
+         width: 200px;
+     }
+     #Register_BackgroundOpacity{
+       display: none;
+    }
+
+}
