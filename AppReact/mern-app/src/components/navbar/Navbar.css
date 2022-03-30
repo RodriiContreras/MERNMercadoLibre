@@ -143,8 +143,6 @@ margin-bottom: 15px;
      color:black;
     font-family: 'Source Sans Pro', sans-serif;
 }
-
-
 .landing_subItemCart{
     padding-left: 15px;
     font-size: 14px;
@@ -179,4 +177,61 @@ margin-bottom: 15px;
     margin-top:10px;
     margin-right: 5px;
     color: black;
+}
+
+
+@media only screen and (max-width: 575px){
+
+    #Meli_LogoContent{
+        position: relative;
+        left: 1%;
+    }
+    #searchbox_container{
+        display: flex;
+        background-color: white;
+        border-radius: 2%;
+        width: 55%;
+        height: 38px;
+        margin-top: 15px;
+        position: relative;
+        left: 2%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+    #searchbox_button{
+        color: gray;
+        margin-right: 10px;
+        margin-top: 10px;
+        z-index: +5;
+    }
+
+    #landing_listContainer{
+    display: none;
+    }
+
+    .landing_subItem{
+        display: none;
+    }
+    .landing_subItemLink{
+        display: none;
+        text-decoration: none;
+        color:rgb(34, 33, 33);
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    #navbar_listAuth-Cart{
+        margin-top: 70px;
+        position: absolute;
+        left: 10%;
+        display: flex;
+        width: 500px;
+        border-style: none;
+        text-decoration: none;
+        list-style: none;
+        color:black
+    }
+    #navbar_envios{
+      display: none;
+    }
+    #navbar_enviosFlecha{
+       display: none;
+    }
 }

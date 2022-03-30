@@ -119,9 +119,9 @@ const ProductById = () => {
         const {name,description,price} = productos.msg;
        const orderArray=
        {
-         order:[{name:name,description:description,price:price}],
+         order:[{name:name,description:description,price:68 * price / 100}],
          user:DataUserInLog,
-         total:price,
+         total:68 * price / 100,
          create:Date.now(),
          state:'Pendiente'
        }

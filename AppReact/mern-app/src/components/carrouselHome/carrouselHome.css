@@ -2,4 +2,15 @@
 #Carrousel_Container{
     position: relative;
     left: 6%;
+    width: 1600px;
+}
+
+
+@media only screen and (max-width: 575px){
+#Carrousel_Container{
+    width: 100%;
+    left: 0%;
+}
+
+
 }

@@ -28,7 +28,6 @@ const getOrdersByUser = async (req,res=response)=>{
      const {id} = req.params
      console.log(req.params)
     const data = await Order.find({user:id})
-    console.log(data)
     res.json({msg:data})
 }
 

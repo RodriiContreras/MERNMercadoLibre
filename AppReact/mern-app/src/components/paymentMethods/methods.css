@@ -62,3 +62,32 @@ margin-right: 70px;
     padding-left: 60px;
     font-size: 14px;
 }
+
+
+@media only screen and (max-width: 575px){
+    #methodsPayment_container{
+        display: flex;
+        background-color: white;
+        justify-content: space-around;
+        position: relative;
+        margin-top: 30px;
+        border-radius:1%;
+        
+       left: 10%;
+        width: 85%;
+        height: 85px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+   .methodsPayment_group2{
+       display: none;
+   }
+#methodsPayment_CardContainerPlus{
+    display: none;
+}
+
+#methodsPayment_CardContainerMasterPlus{
+    display: none;
+}
+  
+}
+

@@ -8,10 +8,10 @@ import './carrouselHome.css'
 const CarrouselHome = () => {
   return (
    <>
-   <Carousel id='Carrousel_Container' style={{'width':"1600px"}}>
+   <Carousel id='Carrousel_Container'>
   <Carousel.Item style={{"height":"400px"}}>
     <img
-      className="d-block w-100"
+      className="d-block w-100 h-100"
       src={Imagen1}
       alt="First slide"
     />
@@ -20,7 +20,7 @@ const CarrouselHome = () => {
   </Carousel.Item>
   <Carousel.Item style={{"height":"400px"}}>
     <img
-      className="d-block w-100"
+      className="d-block w-100 h-100"
       src={Imagen2}
       alt="Second slide"
     />
@@ -30,7 +30,7 @@ const CarrouselHome = () => {
   </Carousel.Item>
   <Carousel.Item style={{"height":"400px"}}>
     <img
-      className="d-block w-100"
+      className="d-block w-100 h-100"
       src={Imagen3}
       alt="Third slide"
     />

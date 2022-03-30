@@ -69,7 +69,7 @@ const OrderHome =() => {
         {item.order.map(items=>(
           <div>
           <p>{items.description}</p>
-          <p>Total price : ${items.price}</p>
+          <p>Total price : ${68 * items.price/ 100 }</p>
           </div>
         ))}
       </Accordion.Body>

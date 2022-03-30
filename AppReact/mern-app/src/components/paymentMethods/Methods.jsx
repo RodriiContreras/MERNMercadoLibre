@@ -18,7 +18,7 @@ const Methods = () => {
        </div>
        </div> 
 
-       <div>
+       <div className='methodsPayment_group2'>
        <Link  to='' id='methodsPayment_CardContainer'>
         <FontAwesomeIcon id='methodsPayment_card' icon={faCreditCard}/>
         </Link>
@@ -27,7 +27,7 @@ const Methods = () => {
 
        </div>
 
-       <div>
+       <div className='methodsPayment_group2'>
        <Link  to='' id='methodsPayment_CardContainer'>
         <FontAwesomeIcon id='methodsPayment_card' icon={faHandHoldingDollar}/>
         </Link>
