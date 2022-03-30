@@ -54,3 +54,34 @@
 #CarsCategories_VolkswagenLogo{
     width: 200px;
 }
+
+@media only screen and (max-width: 575px){
+    #CarsCategories_CardContentFlex{
+        justify-content: start;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        margin-left: 0%;
+        width: 100%;
+    }
+    .CarsCategories_CardBorders{
+        font-family: 'Source Sans Pro', sans-serif;
+        border-radius: 6%;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        background-color: rgb(235, 233, 233);
+        border: 1px solid rgb(225, 223, 223);
+        width: 200px;
+        height: 160px;
+        margin-top: 10px;
+    }
+
+    #Products_CarsContainer{
+        background-color: rgb(230, 228, 228);
+        width: 65%;
+        margin-top: 5%;
+        margin-left: 17%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:start;
+    }
+}
