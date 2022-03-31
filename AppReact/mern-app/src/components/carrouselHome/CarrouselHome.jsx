@@ -9,18 +9,18 @@ const CarrouselHome = () => {
   return (
    <>
    <Carousel id='Carrousel_Container'>
-  <Carousel.Item style={{"height":"400px"}}>
+  <Carousel.Item style={{"height":"500px"}}>
     <img
-      className="d-block w-100 h-100"
+      className="d-block w-100"
       src={Imagen1}
       alt="First slide"
     />
     <Carousel.Caption>
     </Carousel.Caption>
   </Carousel.Item>
-  <Carousel.Item style={{"height":"400px"}}>
+  <Carousel.Item style={{"height":"500px"}}>
     <img
-      className="d-block w-100 h-100"
+      className="d-block w-100"
       src={Imagen2}
       alt="Second slide"
     />
@@ -28,9 +28,9 @@ const CarrouselHome = () => {
     <Carousel.Caption>
     </Carousel.Caption>
   </Carousel.Item>
-  <Carousel.Item style={{"height":"400px"}}>
+  <Carousel.Item style={{"height":"500px"}}>
     <img
-      className="d-block w-100 h-100"
+      className="d-block w-100"
       src={Imagen3}
       alt="Third slide"
     />
