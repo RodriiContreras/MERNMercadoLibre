@@ -11,7 +11,6 @@ import Select from 'react-select'
 const Navbar =() => {
   const [products, setProducts] = useState([])
   const [productId, setproductId] = useState()
-  console.log(productId)
 
    useEffect(() => {
 
@@ -34,8 +33,6 @@ const Navbar =() => {
    
   const {dataAuth , setDataAuth} = useContext(AuthContext)
   
-    
-  console.log(dataAuth)
   return(
     <>
     <div id='navbar_content'>

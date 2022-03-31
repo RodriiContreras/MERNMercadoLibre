@@ -66,7 +66,7 @@ const getProductsByBrand = async (req , res = response)=>{
 const deleteProducts =  async (req,res=response)=>{
   const {id} = req.params
   const productoId = await Product.findByIdAndDelete(id)
-
+  
   // si el usuario que quiere borrarlo no es el vendedor, no podra borrar este producto
 
   //comprobar si producto existe

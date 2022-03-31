@@ -182,6 +182,22 @@ color: rgb(0, 0, 0);
 }
 
 
+#Crud_Edit{
+    background: none;
+    border: none;
+    color: rgb(21, 62, 210);
+}
+#Crud_Delete{
+    background: none;
+    border: none;
+    color: red;
+}
+
+.Crud_Buttons{
+    font-size: 22px;
+}
+
+
 @media only screen and (max-width: 575px){
     #CardProductID_Container{
         width: 100%;
@@ -243,4 +259,10 @@ color: rgb(0, 0, 0);
         margin-left: 16%;
         display: none;
     }
+}
+
+
+::placeholder{
+    color: black;
+    font-weight: bolder;
 }

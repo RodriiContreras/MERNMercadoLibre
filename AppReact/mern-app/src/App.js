@@ -15,6 +15,7 @@ import CarsSections from "./mainComponents/ProductSections/cars/CarsSections";
 import IndumentaryCategories from "./mainComponents/ProductSections/indumentary/IndumentaryCategory/IndumentaryCategories";
 import IndumentarySection from "./mainComponents/ProductSections/indumentary/IndumentarySection";
 import ProductById from "./mainComponents/ProductSections/ProductId/ProductById";
+import ProductEdit from "./mainComponents/ProductSections/ProductId/ProductEdit/ProductEdit";
 import SupermarketCategory from "./mainComponents/ProductSections/supermarket/SupermarketCategory/SupermarketCategory";
 import SupermarketSection from "./mainComponents/ProductSections/supermarket/SupermarketSection";
 import TechnologyCategory from "./mainComponents/ProductSections/technology/TechnologyCategory/TechnologyCategory";
@@ -46,6 +47,7 @@ function App() {
 
 
    <Route exact path={`/product/buy-product/:id`}  element={<ProductById/>}/>
+   <Route exact path={`/product/update-product/:id`}  element={<ProductEdit/>}/>
 
 
    <Route exact path='/history'  element={<History/>}/>

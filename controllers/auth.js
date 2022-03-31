@@ -24,8 +24,7 @@ res.json({
 
 const userGetById = async (req,res=response)=>{
   const {id} = req.params
- 
-  const userExists = await User.findOne({id})
+  const userExists = await User.findById({_id:id})
   if(!userExists){
    return res.status(400).json({
      msg:'El Usuario ingresado no esta asociado con una cuenta en nuestra Base de Datos'
