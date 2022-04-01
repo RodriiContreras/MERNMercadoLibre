@@ -32,6 +32,17 @@ const getOrdersByUser = async (req,res=response)=>{
 }
 
 
+const deleteOrder = async (req,res=response)=>{
+    const {id} = req.params
+    console.log(req.params)
+   const data = await Order.findByIdAndDelete({_id:id})
+   res.json({msg:data})
+}
+
+
+
+
+
 
 
 
@@ -40,5 +51,6 @@ const getOrdersByUser = async (req,res=response)=>{
 module.exports = {
     addOrder,
     getOrders,
-    getOrdersByUser
+    getOrdersByUser,
+    deleteOrder
 }
