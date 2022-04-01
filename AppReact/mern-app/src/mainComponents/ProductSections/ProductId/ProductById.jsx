@@ -19,6 +19,7 @@ const ProductById = () => {
     const [loading, setLoading] = useState(true);
     const {dataAuth} = useContext(AuthContext)
     const [userData, setUserData] = useState()
+    const [quantity, setQuantity] = useState(0)
 
     const {logData} = useContext(AuthContext)
 
@@ -122,19 +123,20 @@ const ProductById = () => {
         })
       }
       else{
-        const {name,description,price} = productos.msg;
+        const {name,description,price,_id} = productos.msg;
        const orderArray=
        {
-         order:[{name:name,description:description,price:68 * price / 100}],
+         order:[{name:name,description:description,price:68 * price * quantity/ 100}],
+         productID:_id,
+         quantity:quantity,
          user:DataUserInLog,
-         total:68 * price / 10,
+         total:68 * price * quantity / 100,
          create:Date.now(),
          state:'Pendiente'
        }
        
 
        const orderArrayStringify = await JSON.stringify(orderArray)
-      
         fetch(`/order/add-order`,{
           method:'POST',
           mode:'cors',
@@ -142,14 +144,26 @@ const ProductById = () => {
             'Content-Type':'application/json'
           },
           body:orderArrayStringify
+        }).then(resp=>resp.json())
+        .then(resp=>{
+          console.log(resp)
+          if(resp.msg === 'Your order exceeds stock'){
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Your order exceed stock!',
+            })
+          }
+          else{
+            Swal.fire({
+              title: 'Good Buy!',
+              text: 'Buy successful',
+              icon: 'success',
+              confirmButtonText: 'Ok!'
+            })
+          }
         })
-
-        Swal.fire({
-          title: 'Good Buy!',
-          text: 'Buy successful',
-          icon: 'success',
-          confirmButtonText: 'Ok!'
-        })
+ 
       }
     }
     
@@ -207,6 +221,21 @@ const ProductById = () => {
     })
    }
 
+   const moreQuantity = ()=>{
+    setQuantity(quantity + 1)
+    
+    if(quantity === 10){
+      setQuantity(quantity + 0)
+    }
+   }
+   const lessQuantity = ()=>{
+    setQuantity(quantity - 1)
+
+    if(quantity === 0){
+      setQuantity(quantity + 0)
+    }
+   }
+
   return (
     <>
     <Navbar/>
@@ -220,6 +249,13 @@ const ProductById = () => {
          <div id='CardProduct_PricesContent'>
         <p id='CardProductID_Price'>${PriceOfPercent}</p>
         <p id='CardProductID_Offer'>68% OFF</p>
+        </div>
+
+       
+        <div id='CardProduct_QuantityContent'>
+          <button className='CardProduct_QuantityButton' onClick={moreQuantity}> + </button>
+          <p id='CardProduct_QuantityState'>   {quantity}   </p>
+          <button className='CardProduct_QuantityButton'  onClick={lessQuantity}> - </button>
         </div>
         <div id='CardProductsID_Buttons'>
         <button id='CardProductsID_Submit' onClick={submitButton}>Submit</button>

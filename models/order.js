@@ -9,6 +9,14 @@ const OrderSchema = Schema({
         type:String,
         required:true
     },
+    quantity:{
+      type:Number,
+      required:true  
+    },
+    productID:{
+     type:Schema.Types.ObjectId,
+     required:true
+    },
     total:{
         type:Number,
         required:true

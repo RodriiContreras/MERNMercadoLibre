@@ -96,7 +96,8 @@ const OrderHome =() => {
         {item.order.map(items=>(
           <div key={items._id}>
           <p>{items.description}</p>
-          <p>Total price : ${68 * items.price/ 100 }</p>
+          <p>Quantity order : {item.quantity}</p>
+          <p>Total price : ${items.price}</p>
 
           <Link to='/'><button onClick={()=>deleteOrder(item._id)}
        style={{'background':'none',border:'none'}}><FontAwesomeIcon

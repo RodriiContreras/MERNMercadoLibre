@@ -1,21 +1,33 @@
-const { response } = require("express")
+const { response } = require("express");
 const Order = require('../models/order')
-
+const Product = require("../models/product")
 
 
 const addOrder = async( req, res=response) =>{
     const {...data} = req.body
-    
+    const {quantity,productID} = data;
+     
+      const productDB = await Product.findById(productID)
+
+   if(productDB){
+
+       if(productDB.stock < quantity){
+           return res.status(400).json({msg:'Your order exceeds stock'})
+       }
+
+       else{
+        productDB.stock = productDB.stock - quantity
+        productDB.save()
+       }
+   }
 
 
-    const dataOrder = new Order(data)
-
-    dataOrder.save()
-
+   
+   const dataOrder = new Order(data)
+   dataOrder.save()
 
     res.status(201).json({
        msg:'Your order has been created successfully',
-       order:dataOrder
     })
 }
 
@@ -38,12 +50,6 @@ const deleteOrder = async (req,res=response)=>{
    const data = await Order.findByIdAndDelete({_id:id})
    res.json({msg:data})
 }
-
-
-
-
-
-
 
 
 
