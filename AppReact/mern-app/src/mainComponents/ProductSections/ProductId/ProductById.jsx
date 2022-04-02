@@ -276,11 +276,14 @@ const ProductById = () => {
         </div>
         </div>
 
-         <div id='CardProductID_UserContent'>
+         <div id='CardProductID_UserContentent'>
           <p id='CardProductID_UserContentP'>User information</p>
-          <p id='CardProductID_UserContentUserName'><FontAwesomeIcon style={{'color':'blue'}} icon={faUser}/>   {userData.name}</p>
-          <p id='CardProductID_UserContentUserName'><FontAwesomeIcon style={{'color':'blue'}} icon={faPhone}/>  {userData.cellphone} </p>
-          <p id='CardProductID_UserContentUserName'><FontAwesomeIcon style={{'color':'blue'}} icon={faCalendar}/> Monday to Friday 9:00hs - 18:00hs</p>
+         
+          <div id='UserContent_NameContent'><p id='CardProductID_UserContentUserName'><FontAwesomeIcon style={{'color':'blue'}} icon={faUser}/> Username <span style={{color:'gray',marginLeft:'20px'}}>{userData.name}</span></p></div>
+         
+          <div id='UserContent_CellphoneContent'><p  id='CardProductID_UserContentUserName'><FontAwesomeIcon style={{'color':'blue'}} icon={faPhone}/> Cellphone <span style={{color:'gray',marginLeft:'20px'}}> {userData.cellphone} </span></p></div>
+        
+         <div id='UserContent_CalendarContent'><p id='CardProductID_UserContentUserName'><FontAwesomeIcon style={{'color':'blue'}} icon={faCalendar}/> Customer Support <span style={{color:'gray',marginLeft:'20px'}}>Monday to Friday 9:00hs - 18:00hs</span></p></div>
         
         
         
@@ -294,8 +297,15 @@ const ProductById = () => {
 
         </div> 
         
+
+        <div id='CardProductID_DescriptionContainer'>
+          <p id='CardProductID_DescriptionTitle'>Description</p>
+          <p id='CardProductID_Description'>{productos.msg.description}</p>
+        </div>
     </div>
    :''} 
+
+
    </div>
     </>
   )

@@ -62,7 +62,7 @@
 #CardProductsID_FinalPrice{
     margin-top: 10%;
     margin-bottom: 0;
-    width: 65%;
+    width: 75%;
     margin-left: 7%;
     font-size: 30px;
 color: rgb(0, 0, 0);
@@ -155,23 +155,64 @@ color: rgb(0, 0, 0);
     background-color: #3483FA;
 }
 
+#CardProductID_UserContentent{
+    border: 1px solid rgb(210, 209, 209);
+    margin-top: 5%;
+    border-radius: 2%;
+    width: 80%;
+     margin-left: 10%;
+}
     
 #CardProductID_UserContentP{
     padding-top: 12px;
-    padding-left: 10%;
+    padding-left: 5%;
     font-size: 22px;
     letter-spacing: 1px;
+    font-weight: bolder;
 }
 #CardProductID_UserContentUserName{
     margin-top: 0;
-    padding-left: 10%;
     font-size: 18px;
+    padding-left: 5%;
+    font-weight: bolder;
 }
 #CardProductID_Title{
     padding-top: 10px;
     font-size: 19px;
     margin-left: 16%;
+    font-weight: bolder;
 }
+
+#CardProductID_DescriptionContainer{
+    width: 81%;
+    margin-left: 16%;
+    height: auto;
+    border: 1px solid rgb(236, 236, 236);
+    border-radius: 2%;
+}
+#CardProductID_DescriptionTitle{
+    font-weight: 500;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+#CardProductID_Description{
+    font-size: 18px;
+    padding-left: 10px;
+}
+#UserContent_NameContent{
+    margin-left: 2%;
+    width: 150px;
+}
+#UserContent_CellphoneContent{
+    margin-left: 2%;
+    width: 150px;
+}
+#UserContent_CalendarContent{
+    margin-left: 2%;
+    width: 220px;
+}
+
 
 #CardProductID_ContentFlex{
     display: flex;
